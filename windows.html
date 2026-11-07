@@ -96,52 +96,69 @@ footer a{color:var(--gold2)}
     <div style="padding:20px 0 44px">
       <span class="kicker">مكان واحد لكل ملفات Windows</span>
       <h1>تشغيل الاستوديو <em>على Windows</em></h1>
-      <p class="lead">ثلاث خطوات مرة واحدة فقط. بعدها: اختصار على سطح المكتب يفتح الاستوديو مباشرة، واختصار للتحديث.</p>
+      <p class="lead">لأي جهاز، جديدًا كان أو قديمًا: أمران تنسخونهما في PowerShell مرة واحدة فقط. بعدها اختصار على سطح المكتب يفتح الاستوديو مباشرة.</p>
       <div class="cta"><a class="btn primary" href="https://github.com/gido70/When-the-Picture-Speaks/tree/main/windows">📁 مجلد ملفات Windows في GitHub</a></div>
     </div>
   </div>
 </header>
 <main class="page" id="steps">
   <div class="wrap">
-    <div class="stepcard">
-      <h3><span class="num">١</span> تثبيت برنامج Git <span class="pill ok">جاهز</span></h3>
-      <p>مرة واحدة فقط. يتيح تنزيل الاستوديو وتحديثه من GitHub بضغطة.</p>
-      <div class="actions">
-        <a class="btn primary" href="windows/1-Install-Git.cmd" download>⬇️ تنزيل ملف التثبيت</a>
-      </div>
+    <div class="stepcard" style="border-color:var(--gold)">
+      <h3>🖥️ قبل البدء: فتح PowerShell</h3>
       <ol>
-        <li>نزّلوا الملف، ثم اضغطوا عليه ضغطًا مزدوجًا من مجلد التنزيلات.</li>
-        <li>إن ظهرت رسالة <b>«Windows protected your PC»</b>: اضغطوا <b>More info</b> ثم <b>Run anyway</b>.</li>
-        <li>تفتح النافذة السوداء وتثبّت Git خلال دقيقة تقريبًا، ثم تكتب <b>Done</b>.</li>
+        <li>اضغطوا زر <b>Start</b> (شعار Windows) أسفل الشاشة.</li>
+        <li>اكتبوا <b>PowerShell</b>، ثم اضغطوا على <b>Windows PowerShell</b>. تفتح نافذة سوداء أو زرقاء.</li>
+        <li>لكل خطوة: اضغطوا زر <b>«نسخ»</b> بجانب الأمر، ثم الصقوه في النافذة <b>بزر الفأرة الأيمن</b>، واضغطوا <b>Enter</b>.</li>
       </ol>
-      <p>أو انسخوا هذا الأمر والصقوه في PowerShell:</p>
+      <p class="warn">لماذا الأوامر وليس الملفات؟ حماية Windows 11 المسماة <b>Smart App Control</b> تمنع تشغيل الملفات المنزّلة من نوع <code style="direction:ltr">.cmd</code>. الأوامر المنسوخة تعمل دائمًا، وتفعل الشيء نفسه بالضبط.</p>
+    </div>
+
+    <div class="stepcard">
+      <h3><span class="num">١</span> تثبيت برنامج Git <span class="pill ok">مرة واحدة لكل جهاز</span></h3>
       <div class="cmd"><code>winget install --id Git.Git -e --source winget</code><button type="button" data-copy>نسخ</button></div>
-      <p>للتأكد بعد التثبيت، افتحوا نافذة PowerShell <b>جديدة</b> واكتبوا:</p>
-      <div class="cmd"><code>git --version</code><button type="button" data-copy>نسخ</button></div>
-    </div>
-
-    <div class="stepcard">
-      <h3><span class="num">٢</span> تثبيت الاستوديو في مكانه الثابت <span class="pill ok">جاهز</span></h3>
-      <p>ملف واحد يفعل كل شيء: ينزّل الاستوديو من GitHub، ويثبّت ما يحتاجه، وينشئ الاختصارات. المرة الأولى تستغرق بضع دقائق.</p>
-      <div class="actions"><a class="btn primary" href="windows/2-Install-Studio.cmd" download>⬇️ تنزيل ملف التثبيت</a></div>
       <ol>
-        <li>اضغطوا على الملف المنزّل ضغطًا مزدوجًا. إن ظهرت <b>«Windows protected your PC»</b>: <b>More info</b> ثم <b>Run anyway</b>.</li>
-        <li>تفتح نافذة دخول GitHub في المتصفح: ادخلوا بحسابكم واضغطوا <b>Authorize</b>. يحدث هذا مرة واحدة فقط.</li>
-        <li>تعرض النافذة السوداء ست مراحل: Python، ثم المكتبات (أطولها)، ثم الإعدادات، ثم مجلد المشاريع، ثم الاختصارات، ثم التشغيل.</li>
-        <li>عند ظهور <b>DONE</b> يفتح الاستوديو في المتصفح وحده.</li>
+        <li>انتظروا حتى ينتهي التثبيت (نحو دقيقة).</li>
+        <li><b>أغلقوا نافذة PowerShell وافتحوا نافذة جديدة</b>، حتى يتعرف Windows على Git.</li>
+        <li>للتأكد، الصقوا هذا الأمر في النافذة الجديدة. يجب أن يظهر رقم إصدار مثل <code style="direction:ltr">git version 2.56.0</code>:</li>
       </ol>
-      <p class="warn">إعداداتكم القديمة (مفاتيح المزودين وغيرها) تُنقل تلقائيًا من نسختكم في التنزيلات إن وُجدت. والنسخة القديمة نفسها لا تُمس.</p>
+      <div class="cmd"><code>git --version</code><button type="button" data-copy>نسخ</button></div>
+      <p>بديل: <a href="windows/1-Install-Git.cmd" download>تنزيل ملف التثبيت</a> (قد تمنعه حماية Windows)، أو تنزيل Git من <a href="https://git-scm.com/download/win">موقعه الرسمي</a>.</p>
     </div>
 
     <div class="stepcard">
-      <h3><span class="num">٣</span> الاستوديو بضغطة واحدة <span class="pill ok">جاهز</span></h3>
-      <p>بعد التثبيت تجدون على سطح المكتب ثلاثة اختصارات:</p>
+      <h3><span class="num">٢</span> تثبيت الاستوديو <span class="pill ok">مرة واحدة لكل جهاز</span></h3>
+      <p>أمر واحد ينزّل الاستوديو ويثبّت كل شيء، ومنه Python 3.11 إن لم يكن موجودًا:</p>
+      <div class="cmd"><code>git clone -b main https://github.com/gido70/When-the-Picture-Speaks.git C:\WhenThePictureSpeaks\studio; if ($?) { powershell -NoProfile -ExecutionPolicy Bypass -File C:\WhenThePictureSpeaks\studio\windows\install.ps1 }</code><button type="button" data-copy>نسخ</button></div>
+      <ol>
+        <li><b>تفتح نافذة دخول GitHub في المتصفح:</b> ادخلوا بحسابكم واضغطوا <b>Authorize</b>. تظهر بعدها صفحة <b>Authentication Succeeded</b>؛ أغلقوها وارجعوا إلى النافذة السوداء.</li>
+        <li>تظهر ست مراحل بعناوين زرقاء: <code style="direction:ltr">== 1/6 Python 3.11</code> حتى <code style="direction:ltr">== 6/6 Starting the studio</code>. <b>مرحلة المكتبات (2/6) أطولها</b>؛ لا تغلقوا النافذة.</li>
+        <li>عند ظهور <b style="color:#2c8a3e">DONE</b> باللون الأخضر، يفتح الاستوديو في المتصفح.</li>
+      </ol>
+      <p class="warn">على الجهاز الذي فيه نسخة قديمة تُنقل الإعدادات تلقائيًا. على جهاز جديد تبدأ الإعدادات الافتراضية، والمسار المجاني (صوت Edge والمزامنة والتصدير) يعمل دون مفاتيح. لنقل مفاتيح المزودين: انسخوا ملف <code style="direction:ltr">config.toml</code> من <code style="direction:ltr">C:\WhenThePictureSpeaks\studio</code> في الجهاز الأول إلى المكان نفسه في الجهاز الجديد.</p>
+      <p>بديل: <a href="windows/2-Install-Studio.cmd" download>تنزيل ملف التثبيت</a> (قد تمنعه حماية Windows).</p>
+    </div>
+
+    <div class="stepcard">
+      <h3><span class="num">٣</span> الاستعمال اليومي <span class="pill ok">بضغطة واحدة</span></h3>
+      <p>بعد التثبيت تجدون على سطح المكتب ثلاثة اختصارات، ولا حاجة إلى PowerShell بعدها:</p>
       <ul>
-        <li><b>«حين تنطق الصورة»</b>: يفتح الاستوديو في المتصفح مباشرة، <b>دون نافذة سوداء</b>.</li>
+        <li><b>«حين تنطق الصورة»</b>: يفتح الاستوديو في المتصفح مباشرة، دون نافذة سوداء.</li>
         <li><b>«تحديث حين تنطق الصورة»</b>: يجلب آخر نسخة معتمدة من GitHub، ويرجع تلقائيًا إلى السابقة إن فشل شيء.</li>
-        <li><b>«مجلد حين تنطق الصورة»</b>: يفتح مجلد البرنامج والمشاريع مباشرة.</li>
+        <li><b>«مجلد حين تنطق الصورة»</b>: يفتح مجلد البرنامج والمشاريع.</li>
       </ul>
-      <p>الاستوديو الرسمي يعمل على العنوان <code style="direction:ltr">localhost:8510</code>، فلا يختلط أبدًا بالنسخ القديمة التي تعمل على 8501.</p>
+      <p>الاستوديو الرسمي يعمل على <code style="direction:ltr">http://localhost:8510</code>، فلا يختلط بالنسخ القديمة (8501). وفي أعلى الاستوديو سطر يعرض <b>رقم الإصدار والمجلد</b> للتأكد.</p>
+    </div>
+
+    <div class="stepcard">
+      <h3>🛠️ عند المشكلات</h3>
+      <ul>
+        <li><b>الاختصارات غير موجودة، أو التثبيت توقف في منتصفه:</b> أعيدوا أمر الخطوة ٢. إن ظهر أن المجلد موجود، الصقوا هذا الأمر بدلًا منه لإكمال التثبيت دون تنزيل جديد:</li>
+      </ul>
+      <div class="cmd"><code>powershell -NoProfile -ExecutionPolicy Bypass -File C:\WhenThePictureSpeaks\studio\windows\install.ps1</code><button type="button" data-copy>نسخ</button></div>
+      <ul>
+        <li><b>الاستوديو لا يفتح:</b> افتحوا «مجلد حين تنطق الصورة»، ثم <code style="direction:ltr">studio\windows</code>، وشغّلوا <code style="direction:ltr">Start-Studio-Debug.cmd</code>. تظهر نافذة بالخطأ؛ أرسلوا صورتها. (ملفات هذا المجلد لا تمنعها حماية Windows لأنها لم تُنزَّل من المتصفح.)</li>
+        <li><b>لإيقاف الاستوديو العامل في الخلفية:</b> <code style="direction:ltr">studio\windows\Stop-Studio.cmd</code>.</li>
+      </ul>
     </div>
 
     <h2 style="margin-top:36px">المكان الثابت على جهازكم (بعد الخطوة ٢)</h2>
