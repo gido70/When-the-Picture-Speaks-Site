@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="robots" content="noindex,nofollow"/>
+<title>تشغيل الاستوديو على Windows | حين تنطق الصورة</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%9E%3C/text%3E%3C/svg%3E"/>
+<style>
+@font-face{font-family:Amiri;src:url(assets/fonts/Amiri-Regular.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Amiri;src:url(assets/fonts/Amiri-Bold.woff2) format("woff2");font-weight:700;font-display:swap}
+:root{--navy:#14324a;--navy2:#0e2537;--gold:#c99a4a;--gold2:#e8c983;--paper:#fffdf8;--bg:#f6f2ea;--ink:#21313f;--muted:#5f6f7e;--line:#e4ded2;--card:#ffffff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#16212b;--bg:#0f1820;--ink:#e9e4da;--muted:#a9b3bc;--line:#2a3743;--card:#1b2833}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Amiri,"Traditional Arabic","Times New Roman",serif;font-size:19px;line-height:1.85}
+a{color:inherit}
+.wrap{max-width:1120px;margin:auto;padding:0 22px}
+.skip{position:absolute;right:-999px}.skip:focus{right:12px;top:12px;background:#fff;color:#000;padding:6px 12px;z-index:9}
+/* hero */
+.hero{background:radial-gradient(1200px 500px at 85% -10%,#24527a 0%,transparent 60%),linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);color:#f4efe5;border-bottom:4px solid var(--gold)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:23px;text-decoration:none}
+.brand span{color:var(--gold2)}
+.navlinks{display:flex;gap:18px;flex-wrap:wrap;font-size:17px}
+.navlinks a{text-decoration:none;opacity:.85}.navlinks a:hover{opacity:1;color:var(--gold2)}
+.herogrid{display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center;padding:34px 0 64px}
+.kicker{display:inline-block;border:1px solid #ffffff40;border-radius:30px;padding:2px 14px;font-size:15px;color:var(--gold2)}
+h1{font-size:clamp(40px,6vw,64px);line-height:1.25;margin:14px 0 10px}
+h1 em{font-style:normal;color:var(--gold2)}
+.lead{font-size:21px;color:#d9e2ea;max-width:34em}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-block;padding:10px 22px;border-radius:30px;text-decoration:none;font-weight:700;font-size:18px}
+.btn.primary{background:var(--gold);color:#1a1a1a}.btn.primary:hover{background:var(--gold2)}
+.btn.ghost{border:1px solid #ffffff55;color:#fff}.btn.ghost:hover{background:#ffffff14}
+.media{margin:0;position:relative;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px #0007;border:1px solid #ffffff22;background:#000}
+.media video{display:block;width:100%;height:auto}
+.media figcaption{padding:7px 14px;font-size:14px;background:#0b1c29;color:#cfd8e0;margin:0}
+/* sections */
+section{padding:64px 0}
+.eyebrow{color:var(--gold);font-weight:700;font-size:16px}
+h2{font-size:clamp(30px,4vw,40px);margin:4px 0 14px;line-height:1.35}
+.sub{color:var(--muted);max-width:44em}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card h3{margin:6px 0 4px;font-size:23px}
+.card p{margin:0;color:var(--muted);font-size:17px}
+.icon{font-size:28px}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;position:relative}
+.step::before{counter-increment:s;content:counter(s,arabic-indic);position:absolute;top:-14px;right:18px;background:var(--gold);color:#1a1a1a;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:700}
+.step h3{margin:6px 0 4px;font-size:21px}.step p{margin:0;color:var(--muted);font-size:16.5px}
+.band{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.status{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+.status .card ul{margin:8px 0 0;padding-right:20px;color:var(--muted);font-size:17px}
+.pill{display:inline-block;font-size:14px;font-weight:700;border-radius:20px;padding:0 12px}
+.pill.ok{background:#e1f0e4;color:#2c6a3a}.pill.next{background:#f6ead2;color:#87591a}
+.docs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:24px}
+.doc{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;text-decoration:none;transition:transform .15s,border-color .15s}
+.doc:hover{transform:translateY(-2px);border-color:var(--gold)}
+.doc .icon{flex-shrink:0}.doc strong{display:block;font-size:21px}.doc small{color:var(--muted);font-size:16px}
+.note{border-right:4px solid var(--gold);background:color-mix(in srgb,var(--gold) 10%,var(--card));padding:12px 18px;border-radius:8px;margin-top:22px;font-size:17px}
+footer{background:var(--navy2);color:#c9d3dc;padding:30px 0;font-size:16px}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+footer a{color:var(--gold2)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+@media (max-width:900px){.herogrid{grid-template-columns:1fr}.grid3,.steps{grid-template-columns:1fr 1fr}.status,.docs{grid-template-columns:1fr}}
+@media (max-width:560px){.grid3,.steps{grid-template-columns:1fr}.navlinks{display:none}body{font-size:18px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.doc{transition:none}}
+
+.page{padding:44px 0 60px}
+.stepcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:18px 0;position:relative}
+.stepcard h3{margin:0 0 6px;font-size:25px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.num{background:var(--gold);color:#1a1a1a;width:36px;height:36px;border-radius:50%;display:inline-grid;place-items:center;font-weight:700}
+.stepcard.soon{opacity:.7}
+.stepcard p,.stepcard li{color:var(--muted);font-size:17.5px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0 6px}
+.btn.dark{background:var(--navy);color:#fff}.btn.dark:hover{background:#1e4565}
+.btn.line{border:1px solid var(--line);color:var(--ink)}
+.cmd{display:flex;gap:10px;align-items:center;background:#0e1b26;color:#e8eef3;border-radius:10px;padding:10px 14px;margin:10px 0;direction:ltr;font-family:Consolas,"Courier New",monospace;font-size:15px;overflow-x:auto}
+.cmd code{flex:1;white-space:nowrap}
+.cmd button{font-family:Amiri,serif;direction:rtl;background:var(--gold);border:0;border-radius:8px;padding:4px 12px;cursor:pointer;font-size:15px;white-space:nowrap}
+.warn{border-right:4px solid var(--gold);background:color-mix(in srgb,var(--gold) 10%,var(--card));padding:10px 16px;border-radius:8px;font-size:16.5px}
+.paths{direction:ltr;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-family:Consolas,monospace;font-size:15px;overflow-x:auto}
+.paths span{font-family:Amiri,serif;direction:rtl;color:var(--muted);margin-left:14px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <nav aria-label="القائمة الرئيسية">
+      <a class="brand" href="index.html">🎞️ حين تنطق <span>الصورة</span></a>
+      <div class="navlinks"><a href="index.html">الرئيسية</a><a href="index.html#docs">الوثائق</a><a href="#steps">الخطوات</a></div>
+    </nav>
+    <div style="padding:20px 0 44px">
+      <span class="kicker">مكان واحد لكل ملفات Windows</span>
+      <h1>تشغيل الاستوديو <em>على Windows</em></h1>
+      <p class="lead">كل ما تحتاجونه هنا: ثلاث خطوات بالترتيب، وكل خطوة ملف تضغطون عليه فتفتح النافذة السوداء وتنفّذ كل شيء تلقائيًا.</p>
+      <div class="cta"><a class="btn primary" href="https://github.com/gido70/When-the-Picture-Speaks/tree/main/windows">📁 مجلد ملفات Windows في GitHub</a></div>
+    </div>
+  </div>
+</header>
+<main class="page" id="steps">
+  <div class="wrap">
+    <div class="stepcard">
+      <h3><span class="num">١</span> تثبيت برنامج Git <span class="pill ok">جاهز</span></h3>
+      <p>مرة واحدة فقط. يتيح تنزيل الاستوديو وتحديثه من GitHub بضغطة.</p>
+      <div class="actions">
+        <a class="btn primary" href="windows/1-Install-Git.cmd" download>⬇️ تنزيل ملف التثبيت</a>
+      </div>
+      <ol>
+        <li>نزّلوا الملف، ثم اضغطوا عليه ضغطًا مزدوجًا من مجلد التنزيلات.</li>
+        <li>إن ظهرت رسالة <b>«Windows protected your PC»</b>: اضغطوا <b>More info</b> ثم <b>Run anyway</b>.</li>
+        <li>تفتح النافذة السوداء وتثبّت Git خلال دقيقة تقريبًا، ثم تكتب <b>Done</b>.</li>
+      </ol>
+      <p>أو انسخوا هذا الأمر والصقوه في PowerShell:</p>
+      <div class="cmd"><code>winget install --id Git.Git -e --source winget</code><button type="button" data-copy>نسخ</button></div>
+      <p>للتأكد بعد التثبيت، افتحوا نافذة PowerShell <b>جديدة</b> واكتبوا:</p>
+      <div class="cmd"><code>git --version</code><button type="button" data-copy>نسخ</button></div>
+    </div>
+
+    <div class="stepcard soon">
+      <h3><span class="num">٢</span> تثبيت الاستوديو في مكانه الثابت <span class="pill next">قريبًا</span></h3>
+      <p>ملف واحد ينزّل الاستوديو من GitHub إلى مكان ثابت، ويثبّت مكتباته، وينشئ اختصارًا على سطح المكتب. يُبنى بعد تثبيت Git.</p>
+    </div>
+
+    <div class="stepcard soon">
+      <h3><span class="num">٣</span> الاستوديو بضغطة واحدة <span class="pill next">قريبًا</span></h3>
+      <p>اختصار «حين تنطق الصورة» على سطح المكتب: يفتح الاستوديو في المتصفح مباشرة. وأداة تحديث تجلب الإصدارات المعتمدة من GitHub، وترجع تلقائيًا إن فشل شيء.</p>
+    </div>
+
+    <h2 style="margin-top:36px">المكان الثابت على جهازكم (بعد الخطوة ٢)</h2>
+    <div class="paths">
+      C:\WhenThePictureSpeaks\studio <span>← البرنامج، ويُحدَّث من GitHub</span><br/>
+      C:\WhenThePictureSpeaks\projects <span>← مشاريعكم وفيديوهاتكم، ولا يمسها أي تحديث</span>
+    </div>
+    <p class="warn" style="margin-top:18px">النسخ القديمة في مجلد التنزيلات تبقى كما هي، ولا يُحذف شيء دون قراركم. ورابط «مجلد ملفات Windows في GitHub» يفتح بعد الدخول بحسابكم، لأن مستودع البرنامج خاص.</p>
+  </div>
+</main>
+<footer><div class="wrap"><span>حين تنطق الصورة · ملفات Windows</span><a href="index.html">العودة إلى الرئيسية</a></div></footer>
+<script>
+document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{
+  const t=b.parentElement.querySelector('code').textContent;
+  try{await navigator.clipboard.writeText(t);b.textContent='تم النسخ ✓'}catch(e){b.textContent='انسخ يدويًا'}
+  setTimeout(()=>b.textContent='نسخ',1800)}));
+</script>
+</body></html>
