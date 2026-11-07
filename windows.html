@@ -96,7 +96,7 @@ footer a{color:var(--gold2)}
     <div style="padding:20px 0 44px">
       <span class="kicker">مكان واحد لكل ملفات Windows</span>
       <h1>تشغيل الاستوديو <em>على Windows</em></h1>
-      <p class="lead">كل ما تحتاجونه هنا: ثلاث خطوات بالترتيب، وكل خطوة ملف تضغطون عليه فتفتح النافذة السوداء وتنفّذ كل شيء تلقائيًا.</p>
+      <p class="lead">ثلاث خطوات مرة واحدة فقط. بعدها: اختصار على سطح المكتب يفتح الاستوديو مباشرة، واختصار للتحديث.</p>
       <div class="cta"><a class="btn primary" href="https://github.com/gido70/When-the-Picture-Speaks/tree/main/windows">📁 مجلد ملفات Windows في GitHub</a></div>
     </div>
   </div>
@@ -120,14 +120,28 @@ footer a{color:var(--gold2)}
       <div class="cmd"><code>git --version</code><button type="button" data-copy>نسخ</button></div>
     </div>
 
-    <div class="stepcard soon">
-      <h3><span class="num">٢</span> تثبيت الاستوديو في مكانه الثابت <span class="pill next">قريبًا</span></h3>
-      <p>ملف واحد ينزّل الاستوديو من GitHub إلى مكان ثابت، ويثبّت مكتباته، وينشئ اختصارًا على سطح المكتب. يُبنى بعد تثبيت Git.</p>
+    <div class="stepcard">
+      <h3><span class="num">٢</span> تثبيت الاستوديو في مكانه الثابت <span class="pill ok">جاهز</span></h3>
+      <p>ملف واحد يفعل كل شيء: ينزّل الاستوديو من GitHub، ويثبّت ما يحتاجه، وينشئ الاختصارات. المرة الأولى تستغرق بضع دقائق.</p>
+      <div class="actions"><a class="btn primary" href="windows/2-Install-Studio.cmd" download>⬇️ تنزيل ملف التثبيت</a></div>
+      <ol>
+        <li>اضغطوا على الملف المنزّل ضغطًا مزدوجًا. إن ظهرت <b>«Windows protected your PC»</b>: <b>More info</b> ثم <b>Run anyway</b>.</li>
+        <li>تفتح نافذة دخول GitHub في المتصفح: ادخلوا بحسابكم واضغطوا <b>Authorize</b>. يحدث هذا مرة واحدة فقط.</li>
+        <li>تعرض النافذة السوداء ست مراحل: Python، ثم المكتبات (أطولها)، ثم الإعدادات، ثم مجلد المشاريع، ثم الاختصارات، ثم التشغيل.</li>
+        <li>عند ظهور <b>DONE</b> يفتح الاستوديو في المتصفح وحده.</li>
+      </ol>
+      <p class="warn">إعداداتكم القديمة (مفاتيح المزودين وغيرها) تُنقل تلقائيًا من نسختكم في التنزيلات إن وُجدت. والنسخة القديمة نفسها لا تُمس.</p>
     </div>
 
-    <div class="stepcard soon">
-      <h3><span class="num">٣</span> الاستوديو بضغطة واحدة <span class="pill next">قريبًا</span></h3>
-      <p>اختصار «حين تنطق الصورة» على سطح المكتب: يفتح الاستوديو في المتصفح مباشرة. وأداة تحديث تجلب الإصدارات المعتمدة من GitHub، وترجع تلقائيًا إن فشل شيء.</p>
+    <div class="stepcard">
+      <h3><span class="num">٣</span> الاستوديو بضغطة واحدة <span class="pill ok">جاهز</span></h3>
+      <p>بعد التثبيت تجدون على سطح المكتب ثلاثة اختصارات:</p>
+      <ul>
+        <li><b>«حين تنطق الصورة»</b>: يفتح الاستوديو في المتصفح مباشرة، <b>دون نافذة سوداء</b>.</li>
+        <li><b>«تحديث حين تنطق الصورة»</b>: يجلب آخر نسخة معتمدة من GitHub، ويرجع تلقائيًا إلى السابقة إن فشل شيء.</li>
+        <li><b>«مجلد حين تنطق الصورة»</b>: يفتح مجلد البرنامج والمشاريع مباشرة.</li>
+      </ul>
+      <p>الاستوديو الرسمي يعمل على العنوان <code style="direction:ltr">localhost:8510</code>، فلا يختلط أبدًا بالنسخ القديمة التي تعمل على 8501.</p>
     </div>
 
     <h2 style="margin-top:36px">المكان الثابت على جهازكم (بعد الخطوة ٢)</h2>
@@ -135,7 +149,7 @@ footer a{color:var(--gold2)}
       C:\WhenThePictureSpeaks\studio <span>← البرنامج، ويُحدَّث من GitHub</span><br/>
       C:\WhenThePictureSpeaks\projects <span>← مشاريعكم وفيديوهاتكم، ولا يمسها أي تحديث</span>
     </div>
-    <p class="warn" style="margin-top:18px">النسخ القديمة في مجلد التنزيلات تبقى كما هي، ولا يُحذف شيء دون قراركم. ورابط «مجلد ملفات Windows في GitHub» يفتح بعد الدخول بحسابكم، لأن مستودع البرنامج خاص.</p>
+    <p class="warn" style="margin-top:18px">النسخ القديمة في مجلد التنزيلات تبقى كما هي، ولا يُحذف شيء دون قراركم. أدوات إضافية في مجلد GitHub: إيقاف الاستوديو، وتشغيله بنافذة ظاهرة لتشخيص أي مشكلة. ورابط «مجلد ملفات Windows في GitHub» يفتح بعد الدخول بحسابكم، لأن مستودع البرنامج خاص.</p>
   </div>
 </main>
 <footer><div class="wrap"><span>حين تنطق الصورة · ملفات Windows</span><a href="index.html">العودة إلى الرئيسية</a></div></footer>
