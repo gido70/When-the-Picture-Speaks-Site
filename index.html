@@ -1,59 +1,177 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="حين تنطق الصورة، موقع تعريفي عربي لاستوديو يحوّل الصور والنص إلى قصص مرئية.">
-<meta name="theme-color" content="#101a28">
-<title>حين تنطق الصورة | استوديو القصص المرئية</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>حين تنطق الصورة | استوديو القصص المرئية العربية</title>
+<meta name="description" content="استوديو محلي لإنتاج القصص المرئية العربية: صور، وسرد، وترجمة عربية متزامنة بخط Amiri، وفيديو جاهز للنشر."/>
+<meta property="og:title" content="حين تنطق الصورة"/>
+<meta property="og:description" content="استوديو القصص المرئية العربية — من الصورة إلى الحكاية."/>
+<meta property="og:image" content="poster.jpg"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%9E%3C/text%3E%3C/svg%3E"/>
 <style>
-:root{color-scheme:dark;--bg:#101a28;--card:#172638;--line:#35465a;--text:#fff4e3;--muted:#c1cbd5;--gold:#f2c17b;--mint:#bfe5d4;--max:1150px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 15% 5%,#263750 0,transparent 44%),var(--bg);color:var(--text);direction:rtl;text-align:right;font:1rem/1.8 "Segoe UI",Tahoma,Arial,sans-serif}
-a{color:inherit;text-underline-offset:.22em}a:focus-visible,button:focus-visible,video:focus-visible{outline:3px solid var(--mint);outline-offset:4px}.shell{width:min(var(--max),calc(100% - 36px));margin:auto}.skip{position:absolute;inset-inline-start:1rem;transform:translateY(-130%);padding:.5rem 1rem;background:var(--mint);color:var(--bg);z-index:5}.skip:focus{transform:none}
-header{border-bottom:1px solid #ffffff19}.top{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:.6rem 0}.brand{font-weight:750;text-decoration:none;display:inline-flex;gap:.65rem;align-items:center}.mark{display:grid;place-items:center;width:35px;height:35px;background:var(--gold);color:#172638;border-radius:11px}.mark svg{width:22px;height:22px}nav{display:flex;gap:1.4rem;flex-wrap:wrap;color:var(--muted);font-size:.94rem}nav a{text-decoration:none}nav a:hover{color:var(--gold)}
-.hero{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(1.5rem,5vw,4.4rem);align-items:center;padding:clamp(2.6rem,7vw,6rem) 0 3.5rem}.eyebrow{display:inline-flex;align-items:center;gap:.45rem;color:var(--mint);font-size:.86rem;letter-spacing:.035em;font-weight:700}.dot{width:.52rem;height:.52rem;border-radius:50%;background:var(--mint)}h1,h2,h3,p{margin:0}h1{font-family:Amiri,"Traditional Arabic","Times New Roman",serif;font-size:clamp(3rem,7.5vw,6rem);line-height:1.07;font-weight:700;margin:.3rem 0 1rem}h1 span{color:var(--gold)}.lead{max-width:29rem;color:var(--muted);font-size:clamp(1.05rem,2vw,1.25rem)}.actions{display:flex;gap:.7rem;flex-wrap:wrap;margin:1.5rem 0 1rem}.action{padding:.62rem 1rem;border:1px solid var(--line);border-radius:10px;text-decoration:none;font-weight:700}.action:hover{border-color:var(--gold)}.primary{background:var(--gold);border-color:var(--gold);color:#192330}.muted{color:var(--muted)}.small{font-size:.88rem}
-figure{margin:0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--card);box-shadow:0 24px 58px #080e1880}.frame-head,figcaption{padding:.75rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap}.frame-head{border-bottom:1px solid var(--line)}.badge{display:inline-flex;padding:.13rem .55rem;background:#273a48;color:var(--mint);border-radius:6px;font-size:.79rem;font-weight:700}video{display:block;width:100%;aspect-ratio:16/9;background:#111e2c;object-fit:contain}figcaption{font-size:.88rem;color:var(--muted)}
-section{scroll-margin-top:1rem;padding:2.6rem 0;border-top:1px solid var(--line)}h2{font-size:clamp(1.7rem,4vw,2.35rem);line-height:1.3;margin:.3rem 0 .75rem}.steps{margin-top:1.35rem;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem;list-style:none;padding:0}.steps li{padding:1.1rem;border:1px solid var(--line);border-radius:13px;background:var(--card)}.num{display:block;color:var(--gold);font-weight:bold;font-size:.92rem;margin-bottom:.4rem}.steps h3{font-size:1.03rem;margin-bottom:.3rem}.steps p{color:var(--muted);font-size:.93rem}
-.status{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.2rem}.status article{background:var(--card);padding:1.15rem;border:1px solid var(--line);border-radius:13px}.status h3{color:var(--gold);margin-bottom:.4rem}.status p{color:var(--muted)}footer{padding:1.35rem 0;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
-@media(max-width:780px){.hero{grid-template-columns:1fr;padding-top:2.5rem;gap:1.4rem}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.top{min-height:65px}}
-@media(max-width:420px){.shell{width:calc(100% - 26px)}.status{grid-template-columns:1fr}.steps li{padding:.72rem}nav{gap:.85rem}.frame-head,figcaption{padding:.6rem .7rem}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@font-face{font-family:Amiri;src:url(assets/fonts/Amiri-Regular.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Amiri;src:url(assets/fonts/Amiri-Bold.woff2) format("woff2");font-weight:700;font-display:swap}
+:root{--navy:#14324a;--navy2:#0e2537;--gold:#c99a4a;--gold2:#e8c983;--paper:#fffdf8;--bg:#f6f2ea;--ink:#21313f;--muted:#5f6f7e;--line:#e4ded2;--card:#ffffff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#16212b;--bg:#0f1820;--ink:#e9e4da;--muted:#a9b3bc;--line:#2a3743;--card:#1b2833}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Amiri,"Traditional Arabic","Times New Roman",serif;font-size:19px;line-height:1.85}
+a{color:inherit}
+.wrap{max-width:1120px;margin:auto;padding:0 22px}
+.skip{position:absolute;right:-999px}.skip:focus{right:12px;top:12px;background:#fff;color:#000;padding:6px 12px;z-index:9}
+/* hero */
+.hero{background:radial-gradient(1200px 500px at 85% -10%,#24527a 0%,transparent 60%),linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);color:#f4efe5;border-bottom:4px solid var(--gold)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:23px;text-decoration:none}
+.brand span{color:var(--gold2)}
+.navlinks{display:flex;gap:18px;flex-wrap:wrap;font-size:17px}
+.navlinks a{text-decoration:none;opacity:.85}.navlinks a:hover{opacity:1;color:var(--gold2)}
+.herogrid{display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center;padding:34px 0 64px}
+.kicker{display:inline-block;border:1px solid #ffffff40;border-radius:30px;padding:2px 14px;font-size:15px;color:var(--gold2)}
+h1{font-size:clamp(40px,6vw,64px);line-height:1.25;margin:14px 0 10px}
+h1 em{font-style:normal;color:var(--gold2)}
+.lead{font-size:21px;color:#d9e2ea;max-width:34em}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-block;padding:10px 22px;border-radius:30px;text-decoration:none;font-weight:700;font-size:18px}
+.btn.primary{background:var(--gold);color:#1a1a1a}.btn.primary:hover{background:var(--gold2)}
+.btn.ghost{border:1px solid #ffffff55;color:#fff}.btn.ghost:hover{background:#ffffff14}
+.media{margin:0;position:relative;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px #0007;border:1px solid #ffffff22;background:#000}
+.media video{display:block;width:100%;height:auto}
+.media figcaption{padding:7px 14px;font-size:14px;background:#0b1c29;color:#cfd8e0;margin:0}
+/* sections */
+section{padding:64px 0}
+.eyebrow{color:var(--gold);font-weight:700;font-size:16px}
+h2{font-size:clamp(30px,4vw,40px);margin:4px 0 14px;line-height:1.35}
+.sub{color:var(--muted);max-width:44em}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card h3{margin:6px 0 4px;font-size:23px}
+.card p{margin:0;color:var(--muted);font-size:17px}
+.icon{font-size:28px}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;position:relative}
+.step::before{counter-increment:s;content:counter(s,arabic-indic);position:absolute;top:-14px;right:18px;background:var(--gold);color:#1a1a1a;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:700}
+.step h3{margin:6px 0 4px;font-size:21px}.step p{margin:0;color:var(--muted);font-size:16.5px}
+.band{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.status{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+.status .card ul{margin:8px 0 0;padding-right:20px;color:var(--muted);font-size:17px}
+.pill{display:inline-block;font-size:14px;font-weight:700;border-radius:20px;padding:0 12px}
+.pill.ok{background:#e1f0e4;color:#2c6a3a}.pill.next{background:#f6ead2;color:#87591a}
+.docs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:24px}
+.doc{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;text-decoration:none;transition:transform .15s,border-color .15s}
+.doc:hover{transform:translateY(-2px);border-color:var(--gold)}
+.doc .icon{flex-shrink:0}.doc strong{display:block;font-size:21px}.doc small{color:var(--muted);font-size:16px}
+.note{border-right:4px solid var(--gold);background:color-mix(in srgb,var(--gold) 10%,var(--card));padding:12px 18px;border-radius:8px;margin-top:22px;font-size:17px}
+footer{background:var(--navy2);color:#c9d3dc;padding:30px 0;font-size:16px}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+footer a{color:var(--gold2)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+@media (max-width:900px){.herogrid{grid-template-columns:1fr}.grid3,.steps{grid-template-columns:1fr 1fr}.status,.docs{grid-template-columns:1fr}}
+@media (max-width:560px){.grid3,.steps{grid-template-columns:1fr}.navlinks{display:none}body{font-size:18px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.doc{transition:none}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">انتقل إلى المحتوى</a>
-<header><div class="shell top">
-<a class="brand" href="#main"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="4.5" width="17" height="15" rx="3"/><path d="m10 9 5 3-5 3z"/></svg></span>حين تنطق الصورة</a>
-<nav aria-label="التنقل"><a href="#demo">المعاينة</a><a href="#steps">خطوات الإنتاج</a><a href="#status">حالة الاستوديو</a></nav>
-</div></header>
-<main id="main" class="shell">
-<div class="hero">
-<div><p class="eyebrow"><span class="dot"></span> استوديو القصص المرئية</p>
-<h1>حين تنطق <span>الصورة</span></h1>
-<p class="lead">ابدأ بصورة ونص. رتّب المشاهد، واختر صوت السرد والترجمة، لتروي قصتك في فيديو قصير.</p>
-<div class="actions"><a class="action primary" href="#demo">شاهد النموذج</a><a class="action" href="#steps">تعرّف على الخطوات</a></div>
-<p class="muted small">موقع تعريفي. الإنتاج متاح عبر الاستوديو المحلي.</p></div>
-<figure id="demo" aria-labelledby="demo-title">
-<div class="frame-head"><strong id="demo-title">مشهد في الوادي</strong><span class="badge">عرض توضيحي · ٦ ثوانٍ</span></div>
-<video controls playsinline preload="metadata" poster="poster.jpg" aria-label="مشهد صامت متحرك لغروب الشمس فوق وادٍ">
-<source src="demo.mp4" type="video/mp4">يمكن تنزيل <a href="demo.mp4">المقطع التوضيحي</a> لمشاهدته.
-</video>
-<figcaption><span>مقطع صامت معدّ مسبقًا برسوم أصلية لهذا الموقع.</span><a href="demo.mp4" download>تنزيل المقطع</a></figcaption>
-</figure></div>
-<section id="steps" aria-labelledby="steps-title">
-<p class="eyebrow">من الصورة إلى الحكاية</p><h2 id="steps-title">خطوات الإنتاج في الاستوديو</h2>
-<p class="muted">هذا هو مسار العمل في النسخة المحلية. توضح المعاينة أعلاه فكرة تحويل الصورة إلى مشهد متحرك.</p>
-<ol class="steps">
-<li><span class="num" aria-hidden="true">٠١</span><h3>اختر موادك</h3><p>أضف صورة أو مجموعة صور ومقاطع من جهازك.</p></li>
-<li><span class="num" aria-hidden="true">٠٢</span><h3>اكتب السرد</h3><p>أدخل النص وحدد الصوت العربي أو أضف تسجيلك.</p></li>
-<li><span class="num" aria-hidden="true">٠٣</span><h3>اضبط المشاهد</h3><p>اختر ترتيب المواد وحركتها ومقاس الفيديو وخط الترجمة.</p></li>
-<li><span class="num" aria-hidden="true">٠٤</span><h3>صدّر الفيديو</h3><p>شغّل المعالجة من الاستوديو المحلي وراجع ملف الفيديو الناتج.</p></li>
-</ol>
-</section>
-<section id="status" aria-labelledby="status-title"><h2 id="status-title">حالة الاستوديو</h2>
-<div class="status"><article><h3>متاح هنا</h3><p>التعرّف على المشروع، وقراءة خطوات الإنتاج، وتشغيل المقطع التوضيحي.</p></article><article><h3>قيد التطوير للويب</h3><p>تسجيل الدخول، ورفع ملفاتك، وإنتاج الفيديو عبر الإنترنت. المعالجة في هذه المرحلة تتم في الاستوديو المحلي.</p></article></div>
-</section>
+<header class="hero">
+  <div class="wrap">
+    <nav aria-label="القائمة الرئيسية">
+      <a class="brand" href="#">🎞️ حين تنطق <span>الصورة</span></a>
+      <div class="navlinks">
+        <a href="#features">ما يقدمه</a><a href="#how">خطوات الإنتاج</a><a href="#status">حالة الاستوديو</a><a href="#docs">الوثائق</a>
+      </div>
+    </nav>
+    <div class="herogrid">
+      <div>
+        <span class="kicker">استوديو القصص المرئية العربية</span>
+        <h1>من الصورة <em>إلى الحكاية</em></h1>
+        <p class="lead">اجمع صورك وسردك في قصة مرئية عربية: ترجمة متزامنة مع الصوت بخط Amiri، ومشاهد مرتبة كما تريد، وفيديو جاهز للنشر — يُنتج على جهازك، بلا تكلفة.</p>
+        <div class="cta"><a class="btn primary" href="#how">كيف يعمل؟</a><a class="btn ghost" href="#docs">الوثائق والخطط</a></div>
+      </div>
+      <figure class="media">
+        <video src="demo.mp4" poster="poster.jpg" controls muted playsinline preload="metadata" aria-label="مقطع توضيحي"></video>
+        <figcaption>مقطع توضيحي صامت برسوم أصلية</figcaption>
+      </figure>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section id="features">
+    <div class="wrap">
+      <div class="eyebrow">ما يقدمه الاستوديو</div>
+      <h2>صُمم للعربية من البداية</h2>
+      <p class="sub">ليس أداة مترجمة: كل تفصيل مبني على اتجاه الكتابة العربية وجمال خطها.</p>
+      <div class="grid3">
+        <div class="card"><div class="icon">🎙️</div><h3>تسجيلك هو المرجع</h3><p>ارفع تعليقًا صوتيًا جاهزًا، فيضبط الاستوديو توقيت الجمل والمشاهد عليه، دون أن يمس الصوت.</p></div>
+        <div class="card"><div class="icon">✍️</div><h3>ترجمة عربية سليمة</h3><p>حروف متصلة، واتجاه صحيح، وخط Amiri، ونص مطابق للكلام المسموع، مع فحص آلي للتطابق.</p></div>
+        <div class="card"><div class="icon">🖼️</div><h3>مشاهد بترتيبك</h3><p>كل صورة في موضعها من السرد، بمدة تصل إلى خمس دقائق، مع حركة هادئة وخلفية متناسقة.</p></div>
+        <div class="card"><div class="icon">💻</div><h3>محلي ومجاني</h3><p>الإنتاج على جهازك. الخدمات المدفوعة اختيارية، ولا تعمل إلا بموافقتك الصريحة.</p></div>
+        <div class="card"><div class="icon">📥</div><h3>استورد من أي أداة</h3><p>صور وأصوات ومقاطع من أدوات التوليد الخارجية، تجتمع في قصة واحدة.</p></div>
+        <div class="card"><div class="icon">🎬</div><h3>جاهز للنشر</h3><p>MP4 أفقي أو عمودي أو مربع، وملف ترجمة SRT، للنشر في يوتيوب والشبكات الاجتماعية.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="band">
+    <div class="wrap">
+      <div class="eyebrow">خطوات الإنتاج</div>
+      <h2>أربع خطوات من الفكرة إلى الفيديو</h2>
+      <div class="steps">
+        <div class="step"><h3>اكتب الحكاية</h3><p>السيناريو والسرد، بمساعدة الذكاء الاصطناعي إن شئت.</p></div>
+        <div class="step"><h3>جهّز المواد</h3><p>الصور بالترتيب، والتعليق الصوتي المسجّل أو الآلي.</p></div>
+        <div class="step"><h3>راجع المزامنة</h3><p>استمع لكل جملة وكل مشهد، وعدّل البدايات إن لزم.</p></div>
+        <div class="step"><h3>صدّر الفيديو</h3><p>فيديو بترجمة عربية متزامنة، يغطي التسجيل كاملًا.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="status">
+    <div class="wrap">
+      <div class="eyebrow">حالة الاستوديو</div>
+      <h2>أين نحن الآن</h2>
+      <div class="status">
+        <div class="card"><span class="pill ok">متاح في الاستوديو المحلي</span>
+          <ul>
+            <li>مزامنة تسجيل جاهز مع النص والصور</li>
+            <li>ترجمة عربية بخط Amiri وفحص التطابق</li>
+            <li>مدد الصور حتى 300 ثانية، وترتيب المشاهد</li>
+            <li>تصدير MP4 وSRT</li>
+          </ul></div>
+        <div class="card"><span class="pill next">قيد التطوير</span>
+          <ul>
+            <li>تشغيل بنقرة واحدة وتحديث تلقائي على Windows</li>
+            <li>إظهار التشكيل في الترجمة على Windows، وتسريع الإنتاج</li>
+            <li>حفظ المشاريع، واستوديو الشخصيات والحوار</li>
+            <li>التحريك ومزامنة الشفاه (عبر أدوات خارجية أولًا)</li>
+          </ul></div>
+      </div>
+      <p class="note">هذا موقع تعريفي. الإنتاج يتم عبر الاستوديو المحلي على جهازك؛ لا تُرفع ملفاتك إلى أي خادم.</p>
+    </div>
+  </section>
+
+  <section id="docs" class="band">
+    <div class="wrap">
+      <div class="eyebrow">الوثائق</div>
+      <h2>الموسوعة والخطط وسجل القرارات</h2>
+      <p class="sub">مرجع المشروع كاملًا، بالفهرس المتفرع نفسه: افتح الباب، ثم فروعه.</p>
+      <div class="docs">
+        <a class="doc" href="docs/encyclopedia-v1-5.html"><span class="icon">📚</span><span><strong>الموسوعة العربية v1.5</strong><small>رؤية الاستوديو، وشرح الواجهة والإعدادات، ومكتبة البرومبتات، والمصطلحات.</small></span></a>
+        <a class="doc" href="docs/studio-plan-v1-5.html"><span class="icon">🧭</span><span><strong>جرد الشيفرة وخطة الاستوديو</strong><small>ما الموجود والمختبر والناقص، ومراحل التطوير، ومعاينة الصوت والتشكيل.</small></span></a>
+        <a class="doc" href="docs/plan-assessment.html"><span class="icon">⚖️</span><span><strong>تقييم خطة استوديو القصص</strong><small>البنية المقترحة، وتحديث Windows من GitHub بأمان، والمخاطر، والقرارات.</small></span></a>
+        <a class="doc" href="docs/index-log.html"><span class="icon">🗂️</span><span><strong>INDEX — سجل القرارات</strong><small>الإصدارات، والقرارات، والمشكلات المفتوحة، ونقاط التوقف، محدّث حتى v1.5.1.</small></span></a>
+      </div>
+    </div>
+  </section>
 </main>
-<footer><div class="shell">حين تنطق الصورة · موقع الاستوديو التعريفي</div></footer>
+
+<footer>
+  <div class="wrap">
+    <span>حين تنطق الصورة · استوديو القصص المرئية العربية</span>
+    <span>الإصدار الحالي للاستوديو: <strong>v1.5.1</strong> · <a href="https://github.com/gido70/When-the-Picture-Speaks-Site">مصدر الموقع</a></span>
+  </div>
+</footer>
 </body>
 </html>

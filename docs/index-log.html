@@ -1,0 +1,656 @@
+<!DOCTYPE html><html dir="rtl" lang="ar"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="robots" content="noindex,nofollow"/><title>INDEX — سجل القرارات | حين تنطق الصورة</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%9E%3C/text%3E%3C/svg%3E"/>
+<style>
+@font-face{font-family:Amiri;src:url(../assets/fonts/Amiri-Regular.woff2) format("woff2");font-weight:400}
+@font-face{font-family:Amiri;src:url(../assets/fonts/Amiri-Bold.woff2) format("woff2");font-weight:700}
+:root{--bg:#f7f4ed;--paper:#fffdf8;--ink:#243448;--muted:#657486;--line:#e1ded4;--gold:#b58c43;--navy:#173852}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:19px/1.85 Amiri,Georgia,serif}
+header{background:var(--navy);color:#fff;padding:22px max(20px,calc((100vw - 1100px)/2));border-bottom:5px solid var(--gold)}
+header a{color:#f1d9a6;text-decoration:none} header h1{margin:0;font-size:30px}
+main{max-width:1100px;margin:22px auto;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:clamp(18px,4vw,42px)}
+h1,h2,h3{line-height:1.4} h2{border-bottom:2px solid var(--line);padding-bottom:6px;margin-top:38px}
+table{border-collapse:collapse;width:100%;font-size:16px;margin:14px 0;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:7px 10px;vertical-align:top;text-align:right} th{background:#edf3f7}
+code{font-family:Consolas,monospace;font-size:.82em;background:#eef2f4;border-radius:5px;padding:1px 5px;direction:ltr;unicode-bidi:isolate}
+blockquote{border-right:4px solid var(--gold);background:#f8f1e3;margin:14px 0;padding:8px 16px}
+a{color:#245b83}
+</style></head><body><header><a href="../index.html">← العودة إلى الموقع</a><h1>INDEX — سجل القرارات والتعديلات ونقاط التوقف</h1></header>
+<main><h1>INDEX — «حين تنطق الصور» (سجل القرارات والتعديلات ونقاط التوقف)</h1>
+<blockquote>
+<p>يُحدَّث مع كل دفعة. لا يُدمج أي تغيير في النسخة الأصلية دون موافقة مسجلة هنا.</p>
+</blockquote>
+<h2>1. الإصدارات والفروع</h2>
+<table>
+<thead>
+<tr>
+<th>الإصدار</th>
+<th>الإيداع</th>
+<th>الفرع</th>
+<th>الحالة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v1.3.0 (أساس)</td>
+<td>5c7196f</td>
+<td>master</td>
+<td>النسخة الأصلية — لا تُعدَّل</td>
+</tr>
+<tr>
+<td>v1.3.0-ar-phase0-rc1</td>
+<td>b0f907b</td>
+<td>fix/arabic-subtitle-rendering</td>
+<td>خط عربي + تشكيل RTL — مختبر آليًا</td>
+</tr>
+<tr>
+<td>v1.3.0-ar-phase0-rc2</td>
+<td>a8dde39</td>
+<td>fix/arabic-subtitle-rendering</td>
+<td>توحيد نص الصوت والترجمة + subtitle_check.json — مختبر آليًا، واختبار فيديو أولي ناجح على جهاز المستخدم</td>
+</tr>
+<tr>
+<td>v1.4.0-studio-b1-rc1</td>
+<td>0592c08 (+ توثيق 128b381، وإيداع التسليم)</td>
+<td>feat/studio-batch1 (من 037b656 فوق rc2)</td>
+<td>الدفعة B1 — مختبرة آليًا وبفيديو كامل في بيئة Claude؛ <strong>بانتظار اختبارك على Windows</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>2. القرارات</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>التاريخ</th>
+<th>القرار</th>
+<th>الحالة</th>
+<th>المبرر</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D-001</td>
+<td>2026-11-05</td>
+<td>إصلاح الأصل بدل إعادة البناء أو FFmpeg مستقل</td>
+<td>معتمد</td>
+<td>طلب المستخدم؛ إعادة استخدام ما هو موجود</td>
+</tr>
+<tr>
+<td>D-002</td>
+<td>2026-11-05</td>
+<td>حذف التشكيل في عرض الترجمة على Windows مقبول مؤقتًا</td>
+<td>معتمد مؤقتًا</td>
+<td>قيد تقني (غياب raqm)؛ مسجل كتحسين</td>
+</tr>
+<tr>
+<td>D-003</td>
+<td>2026-11-05</td>
+<td>الترجمة تحمل الكلام الفعلي دائمًا؛ لا استبدال بنص مكتوب</td>
+<td>معتمد</td>
+<td>متطلب المستخدم (rc2)</td>
+</tr>
+<tr>
+<td>D-004</td>
+<td>2026-11-05</td>
+<td>نموذج «مشروع/مشاهد» JSON نواة مشتركة للواجهة وn8n</td>
+<td>معتمد (2026-11-05) — نموذج JSON مستقل؛ لا التزام بتنفيذ n8n</td>
+<td>يخدم هدفي الاستوديو والأتمتة معًا</td>
+</tr>
+<tr>
+<td>D-005</td>
+<td>2026-11-05</td>
+<td>محرر قائمة مشاهد في Streamlit قبل أي خط زمني بالسحب</td>
+<td>معتمد (2026-11-05)</td>
+<td>80% من القيمة بتكلفة أقل كثيرًا؛ يؤجل قرار تغيير الواجهة</td>
+</tr>
+<tr>
+<td>D-006</td>
+<td>2026-11-05</td>
+<td>صوت آلي لكل مشهد على حدة كأساس للمزامنة</td>
+<td>معتمد (2026-11-05) — التسجيلات الخارجية في مرحلة لاحقة</td>
+<td>توقيت دقيق لكل مشهد دون محاذاة معقدة</td>
+</tr>
+<tr>
+<td>D-007</td>
+<td>2026-11-05</td>
+<td>الدفعة الأولى: تنظيف نص TTS، تقرير الصور، Fit/Fill مع خلفية ضبابية، الحركة اختيارية، ترتيب ثابت</td>
+<td>معتمد (2026-11-05) — نُفّذ في 0592c08</td>
+<td>تعالج أعطالًا مثبتة دون تغيير معماري</td>
+</tr>
+</tbody>
+</table>
+<p>| D-008 | 2026-11-05 | n8n مسار أتمتة <strong>اختياري ومستقبلي</strong>: لا تنفيذ ولا تبعيات ولا تكاليف الآن، ولا تعتمد عليه أي وظيفة | معتمد | قرار المستخدم |
+| D-009 | 2026-11-05 | تحديث ملف القفل يدويًا لسطر edge-tts فقط (بلا ترقية صيغة uv.lock) | منفّذ | <code>uv lock</code> رفع صيغة الملف إلى revision 3 وقد لا يقرؤها uv أقدم على جهاز المستخدم؛ التحقق بـ <code>uv lock --check</code> ومطابقة البصمات مع PyPI |
+| D-010 | 2026-11-05 | استبدال <code>components.v1.html</code> بـ <code>st.html(..., unsafe_allow_javascript=True)</code> لا بـ <code>st.iframe</code> | منفّذ | <code>st.iframe</code> في Streamlit 1.58 يرفض العرض والارتفاع 0 ويوقف الصفحة (مُختبر) |</p>
+<h2>3. المشكلات المفتوحة</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>المشكلة</th>
+<th>المصدر</th>
+<th>الحالة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I-001</td>
+<td>توقف Edge TTS (مهلة 30 ث)</td>
+<td>اختبار المستخدم</td>
+<td>ثُبّت 7.3.1 في requirements وpyproject وuv.lock (0592c08). ينتظر: ناتج <code>pip show edge-tts</code> من .venv، واختبار صوت بعد التطبيق. غير مثبت في كل البيئات</td>
+</tr>
+<tr>
+<td>I-002</td>
+<td>رموز Markdown (<code>**</code>) تُنطق</td>
+<td>اختبار المستخدم + الكود</td>
+<td><strong>أُصلح</strong> (B1-1): تنظيف واحد قبل الصوت والترجمة؛ الاستماع الفعلي على جهازك مطلوب</td>
+</tr>
+<tr>
+<td>I-003</td>
+<td>صور 1024×307 مرفوضة، رسالة عامة</td>
+<td>اختبار المستخدم + الكود</td>
+<td><strong>أُصلح</strong> (B1-2/3): حد أدنى 128 للصور مع تحذيرات، تقرير لكل ملف قبل الصوت</td>
+</tr>
+<tr>
+<td>I-004</td>
+<td>ترتيب المواد عشوائي افتراضيًا</td>
+<td>الكود</td>
+<td><strong>أُصلح</strong> (B1-6) للمواد المحلية؛ عند <code>video_count &gt; 1</code> يبقى الخلط إجباريًا كما في الأصل</td>
+</tr>
+<tr>
+<td>I-005</td>
+<td>تكبير الصور إجباري ويقفز عند التكرار</td>
+<td>الكود</td>
+<td><strong>أُصلح</strong> (B1-5): تكبير يبدأ وينتهي عند 1.0، أو بلا حركة</td>
+</tr>
+<tr>
+<td>I-006</td>
+<td>تحذير st.components.v1.html</td>
+<td>سجل التشغيل</td>
+<td><strong>أُصلح</strong> (B1-8)؛ أثر التمرير في المتصفح غير مختبر</td>
+</tr>
+<tr>
+<td>I-007</td>
+<td>حذف التشكيل في العرض (Windows)</td>
+<td>rc1</td>
+<td>مؤجل</td>
+</tr>
+<tr>
+<td>I-008</td>
+<td>اختبار test_build_script_prompt يفشل منذ التعريب</td>
+<td>الاختبارات</td>
+<td>قائم قبل التعديلات</td>
+</tr>
+<tr>
+<td>I-009</td>
+<td>الفيديو قد يزيد على الصوت حتى مدة لقطة واحدة (48 ث مقابل 44.9 ث في اختبار B1)</td>
+<td>الكود الأصلي (combine_videos يضيف لقطات كاملة)</td>
+<td>قائم قبل التعديلات؛ خارج نطاق B1</td>
+</tr>
+<tr>
+<td>I-010</td>
+<td>المشاهد لا تتزامن مع جملها؛ الصور تتوالى بمدة ثابتة</td>
+<td>تصميم الأصل</td>
+<td>مقصود حتى D-006 (المرحلة 2/3)</td>
+</tr>
+<tr>
+<td>I-011</td>
+<td>الترجمة قد تغطي أسفل الصور العمودية في وضع الاحتواء</td>
+<td>اختبار B1</td>
+<td>تحسين لاحق: هامش سفلي أو موضع ترجمة</td>
+</tr>
+</tbody>
+</table>
+<h2>4. نقاط التوقف</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>النقطة</th>
+<th>الحالة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S-001</td>
+<td>بعد دراسة التكامل</td>
+<td>تجاوزها المستخدم</td>
+</tr>
+<tr>
+<td>S-002</td>
+<td>بعد rc2 — اختبار على جهاز المستخدم</td>
+<td>اختبار أولي ناجح بالمعاينة؛ الاعتماد الرسمي معلّق</td>
+</tr>
+<tr>
+<td>S-003</td>
+<td>بعد الجرد المعماري للاستوديو (المرحلة الأولى)</td>
+<td>اجتيزت — القرارات معتمدة</td>
+</tr>
+<tr>
+<td>S-004</td>
+<td>بعد B1 — تسليم الحزمة</td>
+<td>اعتمدها المستخدم (2026-11-05)؛ سُلّمت الحزمة HTS_studio_batch1_v1.4.0-studio-b1-rc1.zip</td>
+</tr>
+<tr>
+<td>S-005</td>
+<td>اختبار الصوت العربي والفيديو على Windows، ثم قرار اعتماد B1</td>
+<td><strong>الآن — نقطة التوقف النهائية لـ B1.</strong> لا B2، ولا دمج في master</td>
+</tr>
+</tbody>
+</table>
+<h2>5. سجل الدفعة B1 (0592c08)</h2>
+<p><strong>الملفات:</strong> app/models/schema.py · app/services/task.py · app/services/video.py · app/services/voice.py · app/utils/utils.py · webui/Main.py · webui/i18n/{ar,en,ru}.json · requirements.txt · pyproject.toml · uv.lock · test/services/test_studio_batch1.py</p>
+<p><strong>الاختبارات:</strong></p>
+<table>
+<thead>
+<tr>
+<th>الاختبار</th>
+<th>النتيجة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>حزمة المشروع (الفرع)</td>
+<td>153 ناجح، 2 فاشل، 3 متخطى</td>
+</tr>
+<tr>
+<td>حزمة المشروع (master)</td>
+<td>113 ناجح، نفس الفشلين، 3 متخطى</td>
+</tr>
+<tr>
+<td>اختبارات B1 الجديدة</td>
+<td>22/22</td>
+</tr>
+<tr>
+<td>تحميل الواجهة (Streamlit AppTest)</td>
+<td>بلا أخطاء؛ «بالترتيب» افتراضي للمحلي، و«عشوائي» لغيره</td>
+</tr>
+<tr>
+<td>فيديو كامل عبر task.start (5 صور، منها 1024×307، بلا صوت مسموع)</td>
+<td>الترتيب 1←5 صحيح؛ الصور كاملة بحوافها؛ لا قفزات داخل المشهد (أقصى فرق 0.63/255)؛ <code>subtitle_check.json</code>: match=true 32/32؛ لا رموز في النص المرسل للصوت</td>
+</tr>
+</tbody>
+</table>
+<p><strong>الفشلان القديمان (ليسا من B1):</strong> test_azure_tts_v1 (لا اتصال بخادم Microsoft من بيئة الاختبار) · test_build_script_prompt… (موجّه التعريب).</p>
+<p><strong>فشل جديد ظهر وأُصلح أثناء B1:</strong> اختباران للترجمة الروسية؛ أُضيفت النصوص الروسية.</p>
+<p><strong>لم يُختبر:</strong> صوت Edge TTS حقيقي، والاستماع لعدم نطق الرموز، والتشغيل على Windows، والتمرير في المتصفح.</p>
+<h2>خطة تشغيل الاستوديو وتحديثه وتجربة المستخدم</h2>
+<p><strong>خطة معتمدة في 2026-11-06.</strong> تعكس الحالات أدناه وضع نسخة B1 المنقّحة على فرع <code>initial/b1-review</code>. اعتماد الخطة يسجّل اتجاه العمل، واعتماد B1 للتشغيل يبقى عند بوابة اختبار Windows ‏(S-005).</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>البند</th>
+<th>الحالة</th>
+<th>ما تحقق والخطوة التالية</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>تشغيل Windows من اختصار دون شاشة أوامر</td>
+<td>مخطط</td>
+<td>ملف التشغيل الحالي يفتح واجهة الاستوديو محليًا وتظل نافذة الأوامر مفتوحة. المطلوب اختصار بواجهة صامتة يشغّل بيئة المشروع المحلية، ويفتح المتصفح بعد جاهزية الخادم، ويتيح إيقافه والوصول إلى سجل الأخطاء. يُختبر على Windows بالنقر المزدوج ومن مسار عربي أو يحتوي على مسافات.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>تحديث بضغطة واحدة مع النسخ الاحتياطي والتراجع</td>
+<td>مخطط</td>
+<td>وثّقت حزمة Claude إجراءات تطبيق B1 على نسخة منفصلة والتراجع عبر PowerShell. المطلوب واجهة واحدة للتحقق من الإصدار وبصمة الحزمة، وحفظ نسخة احتياطية محلية للإصدار والإعدادات والمشاريع، وفحص التحديث قبل اعتماده، وإتاحة الرجوع عند الفشل. يُختبر استرجاع نسخة سليمة دون فقد المشاريع أو الإعدادات.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>معاينة الصوت العربي والنطق قبل التصدير</td>
+<td>يحتاج اختبارًا</td>
+<td>تتيح الواجهة تشغيل عينة من الصوت وتسمح بالاستماع إلى الصوت المستورد. يرتبط التحقق بـ D-003 وI-001 وI-002. يُختبر صوت عربي فعلي على Windows بعينة من النص المنظّف، مع مراجعة مخارج الكلمات والأسماء والأرقام، وعدم نطق رموز التنسيق، وإمكانية تعديل النص أو الصوت قبل إعادة المعاينة.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>معاينة الخطوط والترجمة العربية واتجاه RTL</td>
+<td>يحتاج اختبارًا</td>
+<td>اختُبر إخراج الترجمة العربية بخط Amiri على Linux، وتضم النسخة أيضًا Noto Naskh Arabic. يُختبر اتجاه RTL واتصال الحروف وعلامات الترقيم وتطابق الصوت مع الترجمة على Windows وفق D-002 وD-003 وI-007 وI-011. وتبقى معاينة مرئية مستقلة قبل التصدير، تشمل الخط والحجم والموضع، جزءًا مخططًا من هذا البند.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>معاينة الصور والحركة والمشاهد والفيديو قبل التصيير النهائي</td>
+<td>مخطط</td>
+<td>اختُبرت خيارات الملاءمة والحركة وترتيب الصور في B1 وفق D-007. تستكمل الخطة D-005 بمعاينة قصيرة لكل مشهد، ثم معاينة منخفضة الدقة لتسلسل الفيديو قبل التصيير النهائي، باستخدام إعدادات القص والملاءمة والحركة والترجمة نفسها.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>حفظ مشاريع الفيديو وإعادة فتحها واستيراد الملفات الخارجية</td>
+<td>مخطط</td>
+<td>رفع الوسائط والصوت المحلي متاح حاليًا، وحفظ بيانات المهمة منفصل عن حفظ مشروع قابل للتحرير. يُنفّذ نموذج «مشروع ← مشاهد» بصيغة JSON وفق D-004 إلى D-006، مع إعادة فتح المشروع واستعادة ترتيب المشاهد ومددها وإعداداتها، واستيراد الصور والفيديو والصوت والترجمة الخارجية والتحقق من المراجع المفقودة.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>تقليل زمن الإنتاج وإعادة استخدام الملفات الوسيطة</td>
+<td>مخطط</td>
+<td>يُقاس أولًا زمن الصوت والترجمة ومعالجة الوسائط والتصيير على مشروع مرجعي. يُعاد استخدام الملفات الوسيطة محليًا حين تتطابق المدخلات والإعدادات المؤثرة، وتُعاد معالجة المرحلة المتأثرة عند تغييرها. يُقارن زمن المحاولتين ويُتحقق من جودة الناتج وتزامنه.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>استمرار التشغيل المحلي ودراسة Cloudflare والدومين للتوسع التجاري</td>
+<td>منجز</td>
+<td>التشغيل المحلي قائم وهو المسار المعتمد. دراسة Cloudflare والدومين الخاص مخططة للتوسع التجاري مستقبلًا، وتشمل ملاءمة استضافة تطبيق Python ومعالجة الوسائط، وحماية الوصول والملفات، والتكلفة. أي نشر خارجي أو تفعيل خدمة مدفوعة يحتاج قرارًا منفصلًا.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>المراجع:</strong> سجل الدفعة B1 والقرارات أعلاه، <a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/INITIAL-IMPORT.md">سجل أول رفع للنسخة المنقّحة</a>، <a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/README-GIDO-AR.md">دليل التشغيل المحلي</a>، ووثائق Claude «جرد معماري وخطة تطوير»، و«دراسة التكامل»، و<code>README_AR.md</code> لحزمة B1.</p>
+<h2>نتائج التحقق الفعلي من B1 وخطة الانتقال إلى الويب</h2>
+<p><strong>تاريخ التحقق 2026-11-06.</strong> المرجع هو الشيفرة المنقّحة في <a href="https://github.com/gido70/When-the-Picture-Speaks/commit/1ee2e3d421798503a0a87b0eba849932683db75b">الإيداع 1ee2e3d</a>. الإيداع <a href="https://github.com/gido70/When-the-Picture-Speaks/commit/62d9ccd5eedc711dcb60f18d6db9f608a2c2934a">62d9ccd</a> أضاف الخطة السابقة إلى الفهرس وحده. هذه المصفوفة تسجل التنفيذ المثبت للمتطلبات نفسها، وتبقى الخطة السابقة سجلًا للقرار.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>المتطلب والملفات المسؤولة</th>
+<th>حالة التنفيذ</th>
+<th>الدليل والمتبقي</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>اختصار Windows صامت · <a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/webui.bat">webui.bat</a> والمشغّل العربي BAT</td>
+<td>لم يُنفّذ</td>
+<td>المشغّلان يستخدمان نافذة أوامر. المطلوب اختصار صامت مع انتظار الجاهزية وإيقاف الخادم وسجل أخطاء، ثم تجربة Windows.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>تحديث بضغطة واحدة مع النسخ والتراجع · شجرة التشغيل و<a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/webui/Main.py">واجهة Streamlit</a></td>
+<td>لم يُنفّذ</td>
+<td>لا محدّث أو اختبار استرجاع ضمن الشجرة. سكربتات تطبيق حزمة Claude منفصلة. المطلوب التحقق من الحزمة وحفظ البيانات وتجربة التراجع عند الفشل.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>معاينة الصوت العربي · <a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/webui/Main.py">الواجهة</a>، <a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/app/services/voice.py">voice.py</a>، <a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/app/services/task.py">task.py</a></td>
+<td>جزئي</td>
+<td>زر الاستماع يفضّل العنوان على النص ويستخدم مسارًا مستقلًا. اختبار B1 لتنظيف النص يستخدم محاكاة. المطلوب معاينة النص النهائي المنظّف وفحص النطق بصوت حقيقي على Windows.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>معاينة الخط والترجمة وRTL · <a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/webui/Main.py">الواجهة</a>، <a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/app/services/video.py">video.py</a>، <a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/test/services/test_rtl_subtitle.py">اختبار RTL</a></td>
+<td>جزئي</td>
+<td>فتحت الواجهة بالعربية مع Amiri وصُيّر مقطع مترجم بصوت اصطناعي. المطلوب معاينة مستقلة وفحص التشكيل والترقيم والتزامن الفعلي على Windows.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>معاينة الصور والحركة والمشاهد · <a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/webui/Main.py">الواجهة</a>، <a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/app/services/video.py">video.py</a>، <a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/test/services/test_studio_batch1.py">اختبارات B1</a></td>
+<td>جزئي</td>
+<td>نجحت اختبارات ترتيب الصور والملاءمة والحركة والإخراج. المطلوب معاينة مشهد ومعاينة تسلسل قبل التصيير النهائي.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>حفظ المشروع وإعادة فتحه واستيراده · <a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/app/services/task.py">task.py</a>، <a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/app/controllers/v1/video.py">مسارات الوسائط</a>، <a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/test/services/test_subtitle_text_match.py">اختبار SRT</a></td>
+<td>جزئي</td>
+<td>توجد مدخلات وسائط وحفظ بيانات المهمة وقبول SRT مراجع. المطلوب مشروع JSON قابل للتحرير مع دورة حفظ وفتح واستعادة المشاهد.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>تقليل الزمن وإعادة الاستخدام · <a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/app/services/material.py">material.py</a>، <a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/app/services/video.py">video.py</a></td>
+<td>جزئي</td>
+<td>استُخدم ملف خارجي مخزّن دون طلب شبكة. أعاد مسار B1 كتابة مقطع الصورة المحلية في التشغيل الثاني. المطلوب قياس المشاريع المرجعية ومفاتيح تخزين مؤقت تراعي المدخلات والإعدادات.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>تشغيل محلي وCloudflare والدومين · <a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/main.py">main.py</a>، <a href="../../Dockerfile">Dockerfile</a>، <a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/docker-compose.yml">ملف Compose</a></td>
+<td>جزئي</td>
+<td>نجح التشغيل المحلي والتصيير على Linux. لا تهيئة نشر أو دومين في الشجرة. الفصل بين الواجهة والمحرك والانتقال إلى Cloudflare مرحلة مخططة.</td>
+</tr>
+</tbody>
+</table>
+<p>نجح <strong>86 اختبارًا موجّهًا</strong> على Linux وPython 3.11، منها 22 اختبارًا من B1. وشملت فحوص التشغيل الإضافية فتح الواجهة بالعربية، وتصيير ترجمة عربية بصوت اصطناعي دون موسيقى، وإعادة استخدام الفيديو الخارجي، وإثبات إعادة التصيير للصورة المحلية. يظل اختبار Windows والنطق الفعلي واعتماد B1 عند S-005. هذه ليست نتيجة المجموعة الاختبارية الكاملة.</p>
+<h3>خطة الويب المقترحة</h3>
+<ol>
+<li><strong>تثبيت المحلي.</strong> اعتماد B1 بعد اختبار Windows، وتسجيل خط أساس لزمن المراحل، مع إبقاء Streamlit ومحرك Python وFFmpeg.</li>
+<li><strong>واجهة تعريفية مستقلة.</strong> إعداد HTML/CSS/JS بواجهة عربية RTL متجاوبة وعينات معدّة مسبقًا ومرخّصة. مستودع Pages منفصل عند الموافقة، مع إبقاء المحرك Private. تُوسَم النماذج التجريبية بوضوح. تقتصر Pages على العرض التعريفي وتبقى المعاملات التجارية وSaaS خارجها وفق <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits">سياسة GitHub Pages</a>.</li>
+<li><strong>تجربة معالجة خاصة.</strong> نقل الواجهة الثابتة عند الحاجة إلى <a href="https://developers.cloudflare.com/pages/framework-guides/deploy-anything/">Cloudflare Pages</a> والدومين. إعادة استخدام خدمات B1 في عامل Python/FFmpeg مع API مؤمّنة، وطابور بمهام قابلة لإعادة المحاولة دون تكرار الأثر، وتخزين خاص وروابط موقّعة. يحدد القياس ملاءمة خادم مستقل أو حاوية.</li>
+<li><strong>الإطلاق التجاري بعد بوابات القبول.</strong> حسابات وأدوار وحصص، واشتراكات عبر بوابة دفع مستضافة، وتفعيل الاستحقاق من أحداث موقّعة. تحقق من حقوق TTS والوسائط والخطوط وتوزيع FFmpeg. احسب تكلفة التصيير والتخزين والطابور والصوت والدفع من عينات فعلية قبل اعتماد السعر أو تفعيل أي خدمة.</li>
+</ol>
+<p><strong>مانع نشر مثبت.</strong> أعاد اختبار محلي دون مصادقة استجابة 200 لقائمة المهام وملف اصطناعي تحت <code>/tasks/</code>. راجع <a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/app/asgi.py">ASGI</a> و<a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/app/controllers/v1/video.py">مسارات المهام</a>. تتطلب التجربة الخارجية تفويضًا حسب المالك، وعزل ملفات المستخدمين، وإغلاق المسارات المفتوحة، وتقييد CORS، وفحص الرفع وعزل FFmpeg، وحدود الاستخدام والاحتفاظ والحذف. لم تتضمن هذه الدفعة نشرًا أو تفعيل خدمات مدفوعة.</p>
+<h2>سجل الوثائق وموقع العرض</h2>
+<ul>
+<li><a href="https://github.com/gido70/When-the-Picture-Speaks/blob/main/docs/hts/DOCUMENTATION.md">سجل الوثائق المعتمدة ونسخ Claude والخرائط</a> يربط المراجع الخاصة ويبين حدود الجرد، ويتضمن مسار Windows وخطة التطبيق الخاص وتصميم Supabase المقترح.</li>
+<li><a href="https://gido70.github.io/When-the-Picture-Speaks-Site/">موقع العرض العام</a> مستضاف في <a href="https://github.com/gido70/When-the-Picture-Speaks-Site">مستودع مستقل</a>. الموقع يعرض مقطعًا توضيحيًا معدًا مسبقًا. تشغيل المحرك يبقى محليًا في هذه المرحلة.</li>
+</ul>
+<h2>سجل Claude منذ S-005 (مدمج في 2026-11-07)</h2>
+<blockquote>
+<p>هذا القسم يضم عمل Claude الذي لم يكن في المستودع: v1.5.0 وv1.5.1. دُمج فوق فرع <code>initial/b1-review</code> (c54619f) دون تعارض في الشيفرة، مع الحفاظ على إصلاحات Codex (الخط الافتراضي Amiri، والعمل دون ملفات الموسيقى، والاختبارات المستقلة). المشروع منذ هذا التاريخ بإدارة المستخدم وClaude؛ ChatGPT للسيناريو والصور عند الحاجة.</p>
+</blockquote>
+<h3>الإصدارات</h3>
+<table>
+<thead>
+<tr>
+<th>الإصدار</th>
+<th>الإيداع</th>
+<th>الفرع</th>
+<th>الحالة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v1.5.1-muzn-sync</td>
+<td>bfc9ae1</td>
+<td>claude/muzn-sync</td>
+<td>خاتمة صامتة، وإبقاء سطر الختام، و<strong>إصلاح اختفاء آخر سطر ترجمة</strong>؛ فيديو مزن بـ16 صورة</td>
+</tr>
+<tr>
+<td>v1.5.0-muzn-sync</td>
+<td>a99d706</td>
+<td>claude/muzn-sync (من 7e2f2ce)</td>
+<td>مزامنة تسجيل جاهز + مدد حتى 300 ث + الإصدار والمجلد في الواجهة + مشغّل Windows — مختبر في بيئة Claude؛ <strong>لم يُدمج مع فرع ChatGPT <code>initial/b1-review</code> (المستودع خاص ولم أطّلع عليه)</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>القرارات D-016 إلى D-026</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>التاريخ</th>
+<th>القرار</th>
+<th>الحالة</th>
+<th>المبرر</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D-016</td>
+<td>2026-11-06</td>
+<td>محاذاة التسجيل الجاهز بالنص بفواصل الصمت وطول النص (محلي، بلا نموذج ولا API)، مع تعليم المقاطع المشكوك فيها ومراجعة بشرية إلزامية</td>
+<td>منفّذ</td>
+<td>لا نموذج تعرف كلام متاح بلا إنترنت؛ لا خدمات مدفوعة</td>
+</tr>
+<tr>
+<td>D-017</td>
+<td>2026-11-06</td>
+<td>المشاهد متصلة: كل حد في منتصف الصمت بين مقطعين؛ الأول من 0 والأخير حتى نهاية التسجيل؛ مسار الصورة يُقرَّب للأعلى لإطار كامل</td>
+<td>منفّذ</td>
+<td>لا فجوات، ولا قص لنهاية التسجيل (اكتُشف قص 0.03 ث وأُصلح)</td>
+</tr>
+<tr>
+<td>D-018</td>
+<td>2026-11-06</td>
+<td>المشغّل الرسمي <code>Start-Studio.bat</code> يرفض النسخ بلا رقم إصدار ويكشف نسخة أخرى على المنفذ 8501</td>
+<td>منفّذ</td>
+<td>السبب المرجّح لظهور حد 10 ث رغم التعديل: نسخة قديمة تعمل على المنفذ نفسه</td>
+</tr>
+<tr>
+<td>D-019</td>
+<td>2026-11-07</td>
+<td>تقسيم المراحل: 1أ الدمج والتثبيت ← 1ب السرعة والتشكيل ← 2أ المشروع والاستيراد ← 2ب الشخصيات والحوار ← 3 التحريك (بحث)</td>
+<td>مقترح — بانتظار الاعتماد الرسمي</td>
+<td>تقرير «تقييم خطة استوديو القصص»</td>
+</tr>
+<tr>
+<td>D-020</td>
+<td>2026-11-07</td>
+<td>التحديث على Windows: مجلد Git رسمي واحد + وسوم معتمدة + <code>Update-Studio.bat</code> (فحص ← حفظ ← تحديث ← اختبار ← رجوع تلقائي)</td>
+<td>مقترح</td>
+<td>إنهاء دائرة أوامر CMD اليدوية</td>
+</tr>
+<tr>
+<td>D-021</td>
+<td>2026-11-07</td>
+<td>نقل المشاريع والمخرجات إلى مجلد مستقل خارج مجلد البرنامج</td>
+<td>مقترح</td>
+<td>لا يمس أي تحديث أعمال المستخدم</td>
+</tr>
+<tr>
+<td>D-022</td>
+<td>2026-11-07</td>
+<td>أصوات الأطفال: تسجيلات حقيقية أولًا؛ الخدمات المدفوعة بقرار مستقل</td>
+<td>مقترح</td>
+<td>Edge TTS بلا أصوات أطفال عربية</td>
+</tr>
+<tr>
+<td>D-023</td>
+<td>2026-11-07</td>
+<td>صياغة الموقع: الإنتاج محلي، دون وعد بإنتاج عبر الويب حاليًا</td>
+<td>مقترح — مرحلة قادمة</td>
+<td>GitHub Pages ثابت</td>
+</tr>
+<tr>
+<td>D-024</td>
+<td>2026-11-07</td>
+<td><strong>المبدأ الحاكم: محلي أولًا ومجاني أولًا.</strong> كل الإنتاج يعمل على جهاز المستخدم بلا تكلفة؛ السيناريو والصور تُعد خارجيًا (Claude أو ChatGPT) ثم تُستورد؛ الخدمات المدفوعة (صوت متقدم، صور متحركة، مزامنة شفاه، مثل WaveSpeed وFlow) <strong>خيارات اختيارية</strong> لا تعمل إلا بتأكيد صريح في كل مرة</td>
+<td><strong>معتمد من المستخدم</strong></td>
+<td>تقليل التكلفة والوقت معًا</td>
+</tr>
+<tr>
+<td>D-025</td>
+<td>2026-11-07</td>
+<td>«حزمة قصة» (Story Pack): ملف واحد يولّده Claude أو ChatGPT يضم المشاهد والنص والحوار وأسماء الصور المتوقعة وبرومبتات توليدها؛ يستورده الاستوديو ويربط الصور بالمشاهد بأسمائها تلقائيًا</td>
+<td>مقترح — ضمن 2أ</td>
+<td>يختصر إعداد كل قصة من ساعات إلى دقائق</td>
+</tr>
+<tr>
+<td>D-026</td>
+<td>2026-11-07</td>
+<td>إدارة Claude لمستودعات GitHub بمفتاح Fine-grained محدود بالمستودعين، لمدة 30 يومًا، دون صلاحيات إدارة، مع حماية الفرع الرئيسي (الدمج بقرار المستخدم عبر Pull Request)</td>
+<td><strong>موافقة مبدئية</strong> — بانتظار المفتاح</td>
+<td>انظر قسم 7</td>
+</tr>
+</tbody>
+</table>
+<h3>المشكلات I-012 إلى I-015</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>المشكلة</th>
+<th>المصدر</th>
+<th>الحالة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I-012</td>
+<td>تعديلات ChatGPT على <code>initial/b1-review</code> غير مدمجة مع v1.5.0</td>
+<td>المستودع خاص</td>
+<td>يلزم ملف ZIP من الفرع أو دمج يدوي بـ <code>git am -3</code></td>
+</tr>
+<tr>
+<td>I-013</td>
+<td>المحاذاة لا تسمع الكلام؛ تحتاج مراجعة بالاستماع</td>
+<td>تصميم D-016</td>
+<td>مزن: 3 مقاطع معلَّمة (2، 3، 61)</td>
+</tr>
+<tr>
+<td>I-014</td>
+<td>آخر سطر ترجمة لا يُرسم أبدًا («أبو الهيثم» اختفى من فيديو مزن الأول)</td>
+<td>قارئ SRT في MoviePy يُسقط آخر مقطع إن لم يتبعه سطر فارغ</td>
+<td><strong>أُصلح</strong> (bfc9ae1) مع اختبار يفشل على الشيفرة القديمة</td>
+</tr>
+<tr>
+<td>I-015</td>
+<td>نطق «مُزْنْ» في التسجيل غير صحيح</td>
+<td>التسجيل نفسه</td>
+<td>قبله المستخدم مؤقتًا؛ تصحيحه يتطلب تسجيلًا جديدًا</td>
+</tr>
+</tbody>
+</table>
+<h3>نقاط التوقف</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>النقطة</th>
+<th>الحالة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S-006</td>
+<td>فيديو مزن + اختبار v1.5.x على Windows + دمج مع فرع ChatGPT</td>
+<td>سُلّم فيديو مزن (16 صورة) والحزمة v1.5.1؛ الدمج والاختبار على Windows ينتقلان إلى 1أ</td>
+</tr>
+<tr>
+<td>S-007</td>
+<td>مفتاح GitHub + اعتماد 1أ ← قراءة المستودع وتقرير حالته الفعلية قبل أي تعديل</td>
+<td><strong>الآن</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>سجل v1.5.0-muzn-sync (a99d706)</h3>
+<p><strong>الملفات:</strong> app/services/alignment.py (جديد) · app/services/timeline.py (جديد) · webui/pages/1_Timeline_Sync.py (جديد) · Start-Studio.bat (جديد) · app/services/video.py · app/services/task.py · app/models/const.py · app/models/schema.py · webui/Main.py · webui/i18n/{ar,en,ru}.json · test/services/test_timeline_sync.py (جديد)</p>
+<p><strong>الاختبارات:</strong> حزمة المشروع 168 ناجحًا (master: 113)، والفشلان القديمان نفسهما · test_timeline_sync 15/15 · test_studio_batch1 22/22 بعد تسريع التكبير · تحميل الصفحتين بلا أخطاء · خيار 300 ث ظاهر.</p>
+<p><strong>فيديو مزن (بيئة Claude):</strong> 12 صورة في مواضعها الصحيحة عند منتصف كل مشهد، و11 حدًّا بلا خطأ (فحص آلي بمقارنة الإطارات بالصور).</p>
+<p><strong>لم يُختبر:</strong> التشغيل على Windows، والمشغّل، ودقة المحاذاة بالاستماع.</p>
+<h3>خارطة الطريق (مسجلة بطلب المستخدم)</h3>
+<h4>الآن: التطوير المحلي (D-024)</h4>
+<table>
+<thead>
+<tr>
+<th>المسار</th>
+<th>مجاني ومحلي (الافتراضي)</th>
+<th>مدفوع اختياري (بتأكيد صريح)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>السيناريو</td>
+<td>Claude أو ChatGPT يكتبان «حزمة قصة» (D-025)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>الصور</td>
+<td>تُولَّد في ChatGPT أو غيره، وتُسمّى بأسماء المشاهد وتُستورد</td>
+<td>—</td>
+</tr>
+<tr>
+<td>الصوت</td>
+<td>Edge TTS (مجاني، يحتاج إنترنت)، أو تسجيل حقيقي</td>
+<td>خدمة صوت متقدمة لأصوات الأطفال والشخصيات</td>
+</tr>
+<tr>
+<td>الحركة</td>
+<td>تكبير بطيء وانتقالات (محلي)</td>
+<td>صور متحركة (WaveSpeed أو Flow) تُستورد كمقاطع</td>
+</tr>
+<tr>
+<td>مزامنة الشفاه</td>
+<td>—</td>
+<td>خدمة خارجية، تُستورد نتيجتها</td>
+</tr>
+<tr>
+<td>المزامنة والترجمة والتصدير</td>
+<td>محلي بالكامل (v1.5.1)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>التحديثات</td>
+<td>GitHub ← <code>Update-Studio.bat</code> (D-020)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h4>المرحلة القادمة (مسجلة، غير مجدولة)</h4>
+<ol>
+<li><strong>الموقع:</strong> تصميم راقٍ للصفحة التعريفية، بصياغة D-023. نشر فيديو مزن على موقع عام يحتاج موافقة صريحة من الأسرة؛ البديل مقطع توضيحي بلا بيانات شخصية.</li>
+<li><strong>Cloudflare Pages:</strong> نقل الموقع من GitHub عند الجاهزية للإطلاق؛ الخطوات بسيطة لأن المستودع جاهز.</li>
+<li><strong>الإنتاج التجاري عبر الإنترنت:</strong> يحتاج خادمًا منفصلًا يشغّل Python وFFmpeg بتكلفة شهرية، لأن Cloudflare لا يشغّل المحرك نفسه. قرار مستقل لاحقًا.</li>
+</ol>
+<h4>إعداد مفتاح GitHub (D-026)</h4>
+<p>Settings ← Developer settings ← Fine-grained tokens: مدة 30 يومًا؛ المستودعان فقط؛ Contents وPull requests: Read and write؛ Administration: No access. ثم حماية الفرع الرئيسي في كل مستودع بقاعدة «Require a pull request before merging». يُلغى المفتاح فور انتهاء العمل أو عند أي شك، ويُعاد إعطاؤه في كل محادثة جديدة لأن بيئة Claude تُمسح بينها.</p></main></body></html>
