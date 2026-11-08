@@ -97,12 +97,20 @@ footer a{color:var(--gold2)}
       <span class="kicker">مكان واحد لكل ملفات Windows</span>
       <h1>تشغيل الاستوديو <em>على Windows</em></h1>
       <p class="lead">لأي جهاز، جديدًا كان أو قديمًا: أمران تنسخونهما في PowerShell مرة واحدة فقط. بعدها اختصار على سطح المكتب يفتح الاستوديو مباشرة.</p>
-      <div class="cta"><a class="btn primary" href="https://github.com/gido70/When-the-Picture-Speaks/tree/main/windows">📁 مجلد ملفات Windows في GitHub</a></div>
+      <div class="cta"><a class="btn primary" href="#update">🔄 تحديث الاستوديو</a><a class="btn ghost" href="https://github.com/gido70/When-the-Picture-Speaks/tree/main/windows">📁 مجلد ملفات Windows في GitHub</a></div>
     </div>
   </div>
 </header>
 <main class="page" id="steps">
   <div class="wrap">
+    <div class="stepcard" id="update" style="border:2px solid var(--gold)">
+      <h3>🔄 تحديث الاستوديو إلى آخر إصدار <span class="pill ok">آخر إصدار: 1.7.0-montage-a</span></h3>
+      <p><b>الطريقة الأسهل:</b> اضغطوا اختصار <b>«تحديث حين تنطق الصورة»</b> على سطح المكتب. يوقف الاستوديو القديم، ويجلب الجديد من GitHub، ويفحصه، <b>ثم يفتحه وحده</b>.</p>
+      <p><b>أو انسخوا هذا الأمر إلى PowerShell</b>، وهو يفعل الشيء نفسه (مفيد أيضًا إن كانت أداة التحديث على جهازكم قديمة):</p>
+      <div class="cmd"><code>Get-NetTCPConnection -LocalPort 8510 -State Listen -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force }; cd C:\WhenThePictureSpeaks\studio; git pull --ff-only origin main; git log -1 --oneline; Start-Process wscript.exe C:\WhenThePictureSpeaks\studio\windows\Launch-Studio.vbs</code><button type="button" data-copy>نسخ</button></div>
+      <p class="warn">بعد التحديث تأكدوا من سطر <b>«إصدار الاستوديو»</b> أعلى الصفحة الرئيسية. إن ظهر رقم قديم فالاستوديو القديم ما زال يعمل: أعيدوا تشغيل الجهاز ثم افتحوا الاختصار. مشاريعكم وفيديوهاتكم وإعداداتكم لا يمسها أي تحديث.</p>
+    </div>
+
     <div class="stepcard" style="border-color:var(--gold)">
       <h3>🖥️ قبل البدء: فتح PowerShell</h3>
       <ol>
