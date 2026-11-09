@@ -97,7 +97,7 @@ footer a{color:var(--gold2)}
       <span class="kicker">مكان واحد لكل ملفات Windows</span>
       <h1>تشغيل الاستوديو <em>على Windows</em></h1>
       <p class="lead">لأي جهاز، جديدًا كان أو قديمًا: أمران تنسخونهما في PowerShell مرة واحدة فقط. بعدها اختصار على سطح المكتب يفتح الاستوديو مباشرة.</p>
-      <div class="cta"><a class="btn primary" href="#update">🔄 تحديث الاستوديو</a><a class="btn ghost" href="docs/guide.html">📖 الدليل</a><a class="btn ghost" href="https://github.com/gido70/When-the-Picture-Speaks/tree/main/windows">📁 مجلد ملفات Windows في GitHub</a></div>
+      <div class="cta"><a class="btn primary" href="#update">🔄 تحديث الاستوديو</a><a class="btn ghost" href="docs/guide.html">📖 الدليل</a><a class="btn ghost" href="#sync">☁️ المزامنة بين جهازين</a><a class="btn ghost" href="https://github.com/gido70/When-the-Picture-Speaks/tree/main/windows">📁 مجلد ملفات Windows في GitHub</a></div>
     </div>
   </div>
 </header>
@@ -109,6 +109,19 @@ footer a{color:var(--gold2)}
       <p><b>أو انسخوا هذا الأمر إلى PowerShell</b>، وهو يفعل الشيء نفسه (مفيد أيضًا إن كانت أداة التحديث على جهازكم قديمة):</p>
       <div class="cmd"><code>Get-NetTCPConnection -LocalPort 8510 -State Listen -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force }; cd C:\WhenThePictureSpeaks\studio; git pull --ff-only origin main; git log -1 --oneline; Start-Process wscript.exe C:\WhenThePictureSpeaks\studio\windows\Launch-Studio.vbs</code><button type="button" data-copy>نسخ</button></div>
       <p class="warn">بعد التحديث تأكدوا من سطر <b>«إصدار الاستوديو»</b> أعلى الصفحة الرئيسية. إن ظهر رقم قديم فالاستوديو القديم ما زال يعمل: أعيدوا تشغيل الجهاز ثم افتحوا الاختصار. مشاريعكم وفيديوهاتكم وإعداداتكم لا يمسها أي تحديث.</p>
+    </div>
+
+    <div class="stepcard" id="sync" style="border:2px solid var(--gold)">
+      <h3>☁️ مزامنة المشاريع بين جهازين (OneDrive) <span class="pill ok">مرة واحدة لكل جهاز</span></h3>
+      <p>بدونها يحفظ كل جهاز مشاريعه وحده. بعدها يظهر أي تعديل على الجهاز الآخر تلقائيًا.</p>
+      <h4>الجهاز الأول (الذي فيه المشاريع)</h4>
+      <ol><li>أغلقوا الاستوديو.</li><li>الصقوا هذا الأمر في PowerShell:</li></ol>
+      <div class="cmd"><code>Move-Item C:\WhenThePictureSpeaks\projects "$env:OneDrive\WhenThePictureSpeaks-projects"; cmd /c mklink /J C:\WhenThePictureSpeaks\projects "$env:OneDrive\WhenThePictureSpeaks-projects"</code><button type="button" data-copy>نسخ</button></div>
+      <ol start="3"><li>انتظروا علامة ✓ الخضراء على مجلد <code style="direction:ltr">WhenThePictureSpeaks-projects</code> في OneDrive.</li></ol>
+      <h4>الجهاز الثاني (اللابتوب)</h4>
+      <ol><li>أغلقوا الاستوديو، وتأكدوا أن OneDrive نزّل المجلد <code style="direction:ltr">WhenThePictureSpeaks-projects</code>.</li><li>الصقوا هذا الأمر في PowerShell:</li></ol>
+      <div class="cmd"><code>Rename-Item C:\WhenThePictureSpeaks\projects projects-old; cmd /c mklink /J C:\WhenThePictureSpeaks\projects "$env:OneDrive\WhenThePictureSpeaks-projects"</code><button type="button" data-copy>نسخ</button></div>
+      <p class="warn">لا تفتحوا المشروع نفسه على الجهازين في الوقت نفسه · انتظروا انتهاء مزامنة OneDrive قبل فتح الاستوديو على الجهاز الآخر · OneDrive المجاني 5 غيغابايت فقط. المجلد القديم في اللابتوب يبقى باسم <code style="direction:ltr">projects-old</code> للاحتياط.</p>
     </div>
 
     <div class="stepcard" style="border-color:var(--gold)">
