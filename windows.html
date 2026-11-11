@@ -97,7 +97,7 @@ footer a{color:var(--gold2)}
       <span class="kicker">مكان واحد لكل ملفات Windows</span>
       <h1>تشغيل الاستوديو <em>على Windows</em></h1>
       <p class="lead">لأي جهاز، جديدًا كان أو قديمًا: أمران تنسخونهما في PowerShell مرة واحدة فقط. بعدها اختصار على سطح المكتب يفتح الاستوديو مباشرة.</p>
-      <div class="cta"><a class="btn primary" href="#update">🔄 تحديث الاستوديو</a><a class="btn ghost" href="docs/guide.html">📖 الدليل</a><a class="btn ghost" href="#sync">☁️ المزامنة بين جهازين</a><a class="btn ghost" href="https://github.com/gido70/When-the-Picture-Speaks/tree/main/windows">📁 مجلد ملفات Windows في GitHub</a></div>
+      <div class="cta"><a class="btn primary" href="#update">🔄 تحديث الاستوديو</a><a class="btn ghost" href="docs/guide.html">📖 الدليل</a><a class="btn ghost" href="#gdrive">☁️ Google Drive</a><a class="btn ghost" href="#sync">☁️ OneDrive</a><a class="btn ghost" href="https://github.com/gido70/When-the-Picture-Speaks/tree/main/windows">📁 مجلد ملفات Windows في GitHub</a></div>
     </div>
   </div>
 </header>
@@ -109,6 +109,22 @@ footer a{color:var(--gold2)}
       <p><b>أو انسخوا هذا الأمر إلى PowerShell</b>، وهو يفعل الشيء نفسه (مفيد أيضًا إن كانت أداة التحديث على جهازكم قديمة):</p>
       <div class="cmd"><code>Get-NetTCPConnection -LocalPort 8510 -State Listen -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force }; cd C:\WhenThePictureSpeaks\studio; git pull --ff-only origin main; git log -1 --oneline; Start-Process wscript.exe C:\WhenThePictureSpeaks\studio\windows\Launch-Studio.vbs</code><button type="button" data-copy>نسخ</button></div>
       <p class="warn">بعد التحديث تأكدوا من سطر <b>«إصدار الاستوديو»</b> أعلى الصفحة الرئيسية. إن ظهر رقم قديم فالاستوديو القديم ما زال يعمل: أعيدوا تشغيل الجهاز ثم افتحوا الاختصار. مشاريعكم وفيديوهاتكم وإعداداتكم لا يمسها أي تحديث.</p>
+    </div>
+
+    <div class="stepcard" id="gdrive" style="border:2px solid var(--gold)">
+      <h3>☁️ المزامنة عبر Google Drive (بدل OneDrive)</h3>
+      <p class="warn"><b>شرط مهم:</b> في تطبيق Google Drive على الجهازين: الإعدادات ← Google Drive ← اختاروا <b>«Mirror files» (نسخ الملفات)</b> لا «Stream files». في وضع Stream يظهر Drive كقرص افتراضي (G:)، والوصلة قد لا تعمل عليه. في وضع Mirror يصبح المجلد حقيقيًا: <code style="direction:ltr">C:\Users\اسمك\My Drive</code>.</p>
+      <h4>الجهاز الأول (الذي فيه المشاريع)</h4>
+      <ol><li>أغلقوا الاستوديو، ثم الصقوا في PowerShell:</li></ol>
+      <div class="cmd"><code>Move-Item C:\WhenThePictureSpeaks\projects "$env:USERPROFILE\My Drive\WhenThePictureSpeaks-projects"; cmd /c mklink /J C:\WhenThePictureSpeaks\projects "$env:USERPROFILE\My Drive\WhenThePictureSpeaks-projects"</code><button type="button" data-copy>نسخ</button></div>
+      <ol start="2"><li>انتظروا حتى يُكمل Google Drive الرفع.</li></ol>
+      <h4>الجهاز الثاني</h4>
+      <ol><li>انتظروا حتى يظهر المجلد <code style="direction:ltr">WhenThePictureSpeaks-projects</code> داخل My Drive، ثم أغلقوا الاستوديو والصقوا:</li></ol>
+      <div class="cmd"><code>Rename-Item C:\WhenThePictureSpeaks\projects projects-old; cmd /c mklink /J C:\WhenThePictureSpeaks\projects "$env:USERPROFILE\My Drive\WhenThePictureSpeaks-projects"</code><button type="button" data-copy>نسخ</button></div>
+      <h4>للتحقق على أي جهاز</h4>
+      <div class="cmd"><code>cmd /c dir C:\WhenThePictureSpeaks | findstr /i "projects"</code><button type="button" data-copy>نسخ</button></div>
+      <p>يجب أن يظهر <code style="direction:ltr">&lt;JUNCTION&gt; projects [...My Drive\WhenThePictureSpeaks-projects]</code>. إن ظهر <code style="direction:ltr">&lt;DIR&gt;</code> فقط فالمجلد نسخة محلية غير مزامنة.</p>
+      <p class="warn">إن كنتم قد نفّذتم خطوات OneDrive سابقًا، فلا تجمعوا بين الخدمتين: اختاروا واحدة. لا تفتحوا المشروع نفسه على الجهازين معًا. هذه الطريقة لم تُختبر بعد على أجهزتكم؛ أرسلوا نتيجة أمر التحقق.</p>
     </div>
 
     <div class="stepcard" id="sync" style="border:2px solid var(--gold)">
