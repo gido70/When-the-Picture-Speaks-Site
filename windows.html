@@ -104,7 +104,7 @@ footer a{color:var(--gold2)}
 <main class="page" id="steps">
   <div class="wrap">
     <div class="stepcard" id="update" style="border:2px solid var(--gold)">
-      <h3>🔄 تحديث الاستوديو إلى آخر إصدار <span class="pill ok">آخر إصدار: 1.12.0-capcut-tools</span></h3>
+      <h3>🔄 تحديث الاستوديو إلى آخر إصدار <span class="pill ok">آخر إصدار: 1.13.0-review</span></h3>
       <p><b>الطريقة الأسهل (من الإصدار 1.7.2):</b> داخل الاستوديو، في أعلى القائمة الجانبية: عند ظهور <b>«🆕 يوجد تحديث جديد»</b> اضغطوا <b>«🔄 تحديث الآن»</b>. تختفي الصفحة لحظات ثم تعود وحدها بالإصدار الجديد.</p><p><b>أو</b> اختصار <b>«تحديث حين تنطق الصورة»</b> على سطح المكتب. يوقف الاستوديو القديم، ويجلب الجديد من GitHub، ويفحصه، <b>ثم يفتحه وحده</b>.</p>
       <p><b>أو انسخوا هذا الأمر إلى PowerShell</b>، وهو يفعل الشيء نفسه (مفيد أيضًا إن كانت أداة التحديث على جهازكم قديمة):</p>
       <div class="cmd"><code>Get-NetTCPConnection -LocalPort 8510 -State Listen -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force }; cd C:\WhenThePictureSpeaks\studio; git pull --ff-only origin main; git log -1 --oneline; Start-Process wscript.exe C:\WhenThePictureSpeaks\studio\windows\Launch-Studio.vbs</code><button type="button" data-copy>نسخ</button></div>
