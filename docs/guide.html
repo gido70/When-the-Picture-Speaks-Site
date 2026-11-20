@@ -15,6 +15,10 @@ th,td{border:1px solid var(--line);padding:7px 10px;vertical-align:top;text-alig
 code{font-family:Consolas,monospace;font-size:.82em;background:#eef2f4;border-radius:5px;padding:1px 5px;direction:ltr;unicode-bidi:isolate}
 blockquote{border-right:4px solid var(--gold);background:#f8f1e3;margin:14px 0;padding:8px 16px}
 a{color:#245b83}
+pre{direction:ltr;text-align:left;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;background:#eef2f4;border:1px solid var(--line);border-radius:10px;padding:14px 16px 14px 16px;margin:14px 0;max-width:100%;box-sizing:border-box;position:relative}
+pre code{background:none;padding:0;font-size:15px;line-height:1.6}
+.copy-btn{position:absolute;top:8px;right:8px;font:14px Amiri,Georgia,serif;background:var(--navy);color:#fff;border:0;border-radius:6px;padding:3px 10px;cursor:pointer}
+pre:has(.copy-btn){padding-top:40px}
 </style></head><body><header><a href="../index.html">← العودة إلى الموقع</a><h1>📖 دليل الاستخدام — ببساطة</h1></header>
 <main><h1>📖 دليل «حين تنطق الصورة» — ببساطة</h1>
 <h2>🚀 المسار الكامل: من فكرة إلى فيلم</h2>
@@ -178,10 +182,12 @@ a{color:#245b83}
 <li><strong>استمع قبل أن تنتج:</strong> كل جملة ومشهد في المزامنة لهما مشغّل، والموسيقى المولّدة لها زر «▶️ استمع إلى هذا الطابع»، وكل مؤثر صوتي له مشغّل في قائمته، والمكتبة الإعلامية تُسمعك كل ملف.</li>
 </ul>
 <h2>التنزيل إلى الجهاز وواتساب</h2>
-<p>تحت كل فيديو منتج:
-- <strong>⬇️ تنزيل إلى جهازي (مجلد التنزيلات):</strong> نسخة كاملة الجودة في Downloads.
-- <strong>📱 نسخة مضغوطة لواتساب:</strong> حتى 15 ميغابايت تقريبًا وبدقة 1280، في Downloads.
-- <strong>▶️ تشغيل في المشغّل الخارجي</strong> و<strong>📂 فتح المجلد</strong>.</p>
+<p>تحت كل فيديو منتج:</p>
+<ul>
+<li><strong>⬇️ تنزيل إلى جهازي (مجلد التنزيلات):</strong> نسخة كاملة الجودة في Downloads.</li>
+<li><strong>📱 نسخة مضغوطة لواتساب:</strong> حتى 15 ميغابايت تقريبًا وبدقة 1280، في Downloads.</li>
+<li><strong>▶️ تشغيل في المشغّل الخارجي</strong> و<strong>📂 فتح المجلد</strong>.</li>
+</ul>
 <h2>ثانيًا: الطرق الثلاث لصناعة فيديو</h2>
 <h3>الطريقة ١ — فيديو سريع من نص (Main)</h3>
 <ol>
@@ -281,11 +287,17 @@ a{color:#245b83}
 <p>بدونها يحفظ كل جهاز مشاريعه وحده. الخطوات والأوامر بأزرار نسخ في صفحة Windows بالموقع، قسم «☁️ المزامنة بين جهازين»:
 https://gido70.github.io/When-the-Picture-Speaks-Site/windows.html#sync</p>
 <ul>
-<li><strong>الجهاز الأول:</strong> أغلق الاستوديو، ثم الصق في PowerShell:
-  <code>Move-Item C:\WhenThePictureSpeaks\projects "$env:OneDrive\WhenThePictureSpeaks-projects"; cmd /c mklink /J C:\WhenThePictureSpeaks\projects "$env:OneDrive\WhenThePictureSpeaks-projects"</code></li>
-<li><strong>الجهاز الثاني:</strong> بعد أن ينزّل OneDrive المجلد، أغلق الاستوديو، ثم الصق:
-  <code>Rename-Item C:\WhenThePictureSpeaks\projects projects-old; cmd /c mklink /J C:\WhenThePictureSpeaks\projects "$env:OneDrive\WhenThePictureSpeaks-projects"</code></li>
-<li>لا تفتح المشروع نفسه على الجهازين معًا، وانتظر انتهاء المزامنة قبل الفتح.</li>
+<li>
+<p><strong>الجهاز الأول:</strong> أغلق الاستوديو، ثم الصق في PowerShell:
+  <code>Move-Item C:\WhenThePictureSpeaks\projects "$env:OneDrive\WhenThePictureSpeaks-projects"; cmd /c mklink /J C:\WhenThePictureSpeaks\projects "$env:OneDrive\WhenThePictureSpeaks-projects"</code></p>
+</li>
+<li>
+<p><strong>الجهاز الثاني:</strong> بعد أن ينزّل OneDrive المجلد، أغلق الاستوديو، ثم الصق:
+  <code>Rename-Item C:\WhenThePictureSpeaks\projects projects-old; cmd /c mklink /J C:\WhenThePictureSpeaks\projects "$env:OneDrive\WhenThePictureSpeaks-projects"</code></p>
+</li>
+<li>
+<p>لا تفتح المشروع نفسه على الجهازين معًا، وانتظر انتهاء المزامنة قبل الفتح.</p>
+</li>
 </ul>
 <h3>عبر Google Drive</h3>
 <p>اختر في تطبيق Google Drive وضع <strong>«Mirror files»</strong> على الجهازين، ثم الخطوات والأوامر في الموقع، قسم «☁️ Google Drive»:
@@ -335,12 +347,14 @@ https://gido70.github.io/When-the-Picture-Speaks-Site/windows.html#gdrive
 <li>يظهر <strong>جدول</strong>: العربي بجانب الإنجليزي. راجع الترجمة، وعدّل أي سطر مباشرة في خانته، فيُحفظ تلقائيًا. لإخفاء سطر إنجليزي، امسح نصه.</li>
 <li>أنتج من تبويب <strong>«🎬 الإنتاج»</strong>: معاينة أولًا، ثم الإنتاج النهائي. تحت الفيديو زر <strong>«⬇️ حفظ الترجمة الإنجليزية SRT»</strong>.</li>
 </ol>
-<p><strong>مهم:</strong>
-- الخانة <strong>لكل مشروع وحده</strong>؛ تفعيلها في مشروع لا يغيّر غيره.
-- <strong>ما دامت الخانة مطفأة لا يتغير شيء</strong> في الفيديو.
-- الترجمة <strong>تستخدم توقيت أسطر المشروع نفسه</strong>؛ لا يُفرَّغ الصوت من جديد.
-- إن <strong>عدّلت نص المشروع بعد الترجمة</strong>، يظهر تنبيه: راجع الأسطر المتغيرة، أو أعد الترجمة (إعادة الترجمة تمسح تعديلاتك على الإنجليزي).
-- «📦 حزمة النشر» تضيف ملف <strong>«5 - ترجمة إنجليزية.srt»</strong> إن كان للمشروع ترجمة.</p>
+<p><strong>مهم:</strong></p>
+<ul>
+<li>الخانة <strong>لكل مشروع وحده</strong>؛ تفعيلها في مشروع لا يغيّر غيره.</li>
+<li><strong>ما دامت الخانة مطفأة لا يتغير شيء</strong> في الفيديو.</li>
+<li>الترجمة <strong>تستخدم توقيت أسطر المشروع نفسه</strong>؛ لا يُفرَّغ الصوت من جديد.</li>
+<li>إن <strong>عدّلت نص المشروع بعد الترجمة</strong>، يظهر تنبيه: راجع الأسطر المتغيرة، أو أعد الترجمة (إعادة الترجمة تمسح تعديلاتك على الإنجليزي).</li>
+<li>«📦 حزمة النشر» تضيف ملف <strong>«5 - ترجمة إنجليزية.srt»</strong> إن كان للمشروع ترجمة.</li>
+</ul>
 <h3>ب) ترجمة أي فيديو آخر (صفحة «🌐 ترجمة فيديو»)</h3>
 <ol>
 <li>افتح <strong>«🌐 ترجمة فيديو»</strong> من القائمة، وارفع الفيديو.</li>
@@ -354,10 +368,12 @@ https://gido70.github.io/When-the-Picture-Speaks-Site/windows.html#gdrive
 <li><strong>«👁️ معاينة أول 20 ثانية»</strong> للتأكد، ثم <strong>«🎬 أنتج الفيديو المترجم»</strong>.</li>
 <li><strong>الناتج في مجلد التنزيلات:</strong> الفيديو المترجم، وملف SRT بالترجمة.</li>
 </ol>
-<p><strong>مهم:</strong>
-- هذه الصفحة <strong>لا تمس أي مشروع</strong>، و<strong>الفيديو الأصلي لا يتغير</strong>.
-- دقة التفريغ تعتمد على <strong>وضوح الكلام</strong>؛ راجع الأوقات والنص قبل الإنتاج، خصوصًا مع الموسيقى العالية.
-- ابدأ بمقطع قصير (دقيقة أو أقل) في أول تجربة.</p>
+<p><strong>مهم:</strong></p>
+<ul>
+<li>هذه الصفحة <strong>لا تمس أي مشروع</strong>، و<strong>الفيديو الأصلي لا يتغير</strong>.</li>
+<li>دقة التفريغ تعتمد على <strong>وضوح الكلام</strong>؛ راجع الأوقات والنص قبل الإنتاج، خصوصًا مع الموسيقى العالية.</li>
+<li>ابدأ بمقطع قصير (دقيقة أو أقل) في أول تجربة.</li>
+</ul>
 <h3>التكلفة والأخطاء</h3>
 <ul>
 <li>كل طلب لـ Gemini <strong>لا يُرسل إلا بعد علامة الموافقة</strong>. قد يُحتسب على حسابك في Google حسب خطتك (وله حصة مجانية).</li>
@@ -385,9 +401,11 @@ https://gido70.github.io/When-the-Picture-Speaks-Site/windows.html#gdrive
 <p><strong>٢. إن لم تجد الزرين</strong> (نسخة قديمة جدًا): اضغط مرتين على اختصار <strong>«تحديث حين تنطق الصورة»</strong> في سطح المكتب. وإن لم يوجد، افتح <strong>PowerShell</strong> (زر Start ← اكتب PowerShell) والصق:</p>
 <pre><code>Get-NetTCPConnection -LocalPort 8510 -State Listen -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force }; cd C:\WhenThePictureSpeaks\studio; git pull --ff-only origin main; git log -1 --oneline; Start-Process wscript.exe C:\WhenThePictureSpeaks\studio\windows\Launch-Studio.vbs
 </code></pre>
-<p><strong>إن ظهر خطأ:</strong>
-- «Cannot find path C:\WhenThePictureSpeaks\studio»: الاستوديو في مجلد آخر أو نسخة قديمة جدًا؛ يلزم التثبيت الرسمي (لا يحذف شيئًا).
-- «Program files were changed by hand»: توقف التحديث ولم يتغير شيء؛ أرسل صورة الشاشة.</p>
+<p><strong>إن ظهر خطأ:</strong></p>
+<ul>
+<li>«Cannot find path C:\WhenThePictureSpeaks\studio»: الاستوديو في مجلد آخر أو نسخة قديمة جدًا؛ يلزم التثبيت الرسمي (لا يحذف شيئًا).</li>
+<li>«Program files were changed by hand»: توقف التحديث ولم يتغير شيء؛ أرسل صورة الشاشة.</li>
+</ul>
 <p><strong>مشاريعك وفيديوهاتك لا يمسها أي تحديث.</strong> ومشاريع جهاز لا تظهر على الآخر إلا إن كان مجلد المشاريع مربوطًا بـ OneDrive في الجهازين (انظر «مزامنة المشاريع بين جهازين»).</p>
 <h2>سادسًا: مشكلات شائعة</h2>
 <table>
@@ -425,4 +443,4 @@ https://gido70.github.io/When-the-Picture-Speaks-Site/windows.html#gdrive
 <li><strong>مجاني ومحلي:</strong> المزامنة، والمونتاج، والحركات والانتقالات، والترجمة، والتصدير، وأصوات <strong>Azure TTS V1 (Edge)</strong>.</li>
 <li><strong>يحتاج مفتاحًا (قد يكون مدفوعًا):</strong> أصوات Azure V2 وGemini وغيرها، ونماذج كتابة النص (OpenAI…). تُضاف المفاتيح في <strong>«الإعدادات الأساسية»</strong> أعلى الصفحة الرئيسية.</li>
 <li><strong>تنبيه:</strong> الاشتراك في موقع (مثل ChatGPT Plus أو Gemini أو Flow) <strong>لا يعني</strong> مفتاح API؛ المفتاح يُطلب من صفحة المطورين لكل خدمة، ويُحاسَب حسب الاستخدام.</li>
-</ul></main></body></html>
+</ul></main><script>document.querySelectorAll('pre').forEach(function(p){var b=document.createElement('button');b.className='copy-btn';b.textContent='📋 نسخ';b.onclick=function(){var t=p.querySelector('code')?p.querySelector('code').innerText:p.innerText;navigator.clipboard.writeText(t).then(function(){b.textContent='✅ نُسخ';setTimeout(function(){b.textContent='📋 نسخ'},1500)})};p.appendChild(b)});</script></body></html>
