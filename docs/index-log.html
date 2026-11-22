@@ -20,7 +20,8 @@ pre code{background:none;padding:0;font-size:15px;line-height:1.6}
 .copy-btn{position:absolute;top:8px;right:8px;font:14px Amiri,Georgia,serif;background:var(--navy);color:#fff;border:0;border-radius:6px;padding:3px 10px;cursor:pointer}
 pre:has(.copy-btn){padding-top:40px}
 </style></head><body><header><a href="../index.html">← العودة إلى الموقع</a><h1>INDEX — سجل القرارات والتعديلات ونقاط التوقف</h1></header>
-<main><h1>INDEX — «حين تنطق الصور» (سجل القرارات والتعديلات ونقاط التوقف)</h1>
+<main>
+<h1>INDEX — «حين تنطق الصور» (سجل القرارات والتعديلات ونقاط التوقف)</h1>
 <blockquote>
 <p><strong>📖 دليل الاستخدام المبسّط:</strong> صفحة «Guide» في الاستوديو، وفي الموقع: https://gido70.github.io/When-the-Picture-Speaks-Site/docs/guide.html (المصدر: <code>docs/hts/GUIDE_AR.md</code>).
 <strong>🔄 لتفعيل أي تحديث على جهازكم:</strong> اختصار <strong>«تحديث حين تنطق الصورة»</strong> على سطح المكتب (يوقف القديم ويحدّث ويفتح الجديد)، أو أمر التحديث بزر نسخ:
@@ -1507,6 +1508,46 @@ https://gido70.github.io/When-the-Picture-Speaks-Site/windows.html#update
 </tbody>
 </table>
 <p><strong>الاختبار:</strong> متصفح: القائمة فيها التسويق والمزودون والدليل، ولا «View more»؛ وفحص Python 3.11.</p>
+<h3>v1.29.0 — مجلدات القنوات داخل «التسويق» (2026-11-22)</h3>
+<p><strong>طلب المستخدم:</strong> «حين تنطق الصورة» صار اسم الاستوديو كله؛ لكل قناة مجلد داخل «📣 التسويق» يفتح على كل تفاصيل صناعة فيديوهاتها، ومسار ثابت تقرؤه أداة الأتمتة (n8n — افتراض: كتب المستخدم «NTN») للأعمال الروتينية والرد على تعليقات يوتيوب.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>ما تغيّر</th>
+<th>التفاصيل</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I-084</td>
+<td>ملف لكل قناة</td>
+<td><code>docs/hts/channels/&lt;القناة&gt;.json</code> (5 قنوات: حكاية الأطفال، حين تنطق الصورة، المسار AI، ظاهرة وتفسير، مرآة الحكاية): الهوية، القالب، القواعد، مسار العمل، المراجع، البرومبتات، الحلقات، قواعد الرد. يقرؤه <code>app/studio/channels.py</code></td>
+</tr>
+<tr>
+<td>I-084</td>
+<td>تبويب «🗂️ القنوات»</td>
+<td>جدول ملخص من الملفات، ثم <strong>📁 مجلد لكل قناة</strong> يفتح على: القالب والقواعد، الحلقات (النص بالتوقيت + SRT + برومبت الموسيقى)، البرومبتات، الملفات، الإنتاج، الأتمتة</td>
+</tr>
+<tr>
+<td>I-084</td>
+<td>مجلد على الجهاز</td>
+<td><code>&lt;مجلد المشاريع&gt;/_channels/&lt;القناة&gt;/</code> (داخل OneDrive وفي النسخة الاحتياطية) بستة مجلدات: 01 الأفكار والنصوص، 02 الصور، 03 فيديو صامت، 04 الصوت، 05 الموسيقى والترخيص، 06 جاهز للنشر؛ و<code>channel.json</code> يُحدَّث تلقائيًا لـ n8n</td>
+</tr>
+<tr>
+<td>I-084</td>
+<td>«حين تنطق الصورة · Picture»</td>
+<td>خرجت من القائمة الجانبية (<code>visibility="hidden"</code>)، وتُفتح من مجلد قناتها؛ الرابط <code>/Picture</code> يعمل كما هو</td>
+</tr>
+<tr>
+<td>I-085</td>
+<td>🎙️ أضف الصوت (ظاهرة وتفسير)</td>
+<td>الفيديو الصامت + تسجيلك (+ تأخير اختياري) + موسيقى مرخّصة اختيارية تنخفض تحت الصوت ← صوت يوتيوب ‎-14 LUFS ← «06 جاهز للنشر». الصورة تُنسخ بلا إعادة ترميز، والأصل لا يتغير، والتوقيع اختياري (مطفأ افتراضيًا حتى لا يتكرر)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>بيانات «ظاهرة وتفسير»:</strong> الحلقات الثلاث (قوس المطر، الرعد، أطوار القمر) بنصوصها المؤقتة ومصادرها وبرومبتات الموسيقى، منقولة من مستندات المشروع «حزمة الاستوديو 1» و«صوت وموسيقى القناة». <strong>الفيديوهات نفسها ليست في المستودع:</strong> تُوضع في «03 فيديو صامت» من تبويب «📂 الملفات».</p>
+<p><strong>الاختبار:</strong> 4 اختبارات وحدة جديدة (اكتمال الملفات، حلقات ظاهرة وتفسير وSRT، المجلدات والاستيراد بأسماء آمنة ولا تظهر كمشاريع، وتركيب صوت وموسيقى حقيقي بـ ffmpeg بالمدة الصحيحة)؛ ومتصفح: «Picture» غائبة عن القائمة، والمجلدات تفتح بلا أخطاء، وزر الأداة ينقل إلى <code>/Picture</code>. باقي الاختبارات: 290، منها 3 إخفاقات قائمة قبل هذا التعديل (test_llm ×2، test_voice) لا علاقة لها به.</p>
 <h3>خريطة القنوات — معتمدة (2026-11-21)</h3>
 <p><strong>ملاحظة المستخدم:</strong> فيديو مرجعي (حكاية رمزية برسم داكن، تعليق «واقعنا المر») أعجبه، وطلب نوعًا جديدًا بمحتوى حقيقي موثّق من الكتب، والذكاء للسيناريو والصور والصوت فقط. <strong>القرار D-042 (معتمد من المستخدم):</strong> قناتان الآن — «حكاية الأطفال» و«مرآة الحكاية» (للأسرة والكبار) بأربع سلاسل: «على لسان الحيوان»، «قالوا قديمًا»، «فرجٌ بعد شدة»، «فطنة وغفلة»؛ كل سلسلة قناة مستقلة حين تثبت جمهورًا. المراجع وبنك 20 قصة وصيغة التوثيق والقواعد في <a href="CHANNELS.md"><code>CHANNELS.md</code></a>. الفيديو المرجعي للكبار ورسالته سياسية؛ لا نسخ له، والنبرة عندنا حكيمة ومضيئة وبلا إسقاط سياسي.</p>
 <p><strong>التحقق من المراجع (طلب المستخدم):</strong> كل رابط فُتح وطوبق عنوانه ومؤلفه قبل الدمج؛ استُبعدت روابط ويكي مصدر الأربعة ورابط الشاملة 11068 لأنها لم تُفتح عند الفحص، واستُبدلت بروابط تعمل (الشاملة، وأبجد للشوقيات، وغوتنبرغ etext/21، والأذكياء 6938). المستند القابل للتعديل: «خريطة القنوات — حين تنطق الصورة» (Claude Docs).</p>
@@ -2203,4 +2244,5 @@ https://gido70.github.io/When-the-Picture-Speaks-Site/windows.html#update
 </table>
 <p><strong>حالة مشروع المستخدم «الأسد والفأر — النسخة المتحركة»:</strong> محفوظ في <code>projects/studio_projects/&lt;id&gt;</code> (صوت ElevenLabs «Habibah» مولَّد مسبقًا)، ويُكمَل من مكتبتي ← فتح في المونتاج، دون إعادة توليد الصوت.</p>
 <p><strong>الاختبار:</strong> محاكاة كاملة لتبويب التحريك (رفض الإرسال بلا موافقة مع السبب، ثم الإرسال بـ 480p وصوت مطفأ ومدة 10 واستبدال «5 seconds» بـ «10 seconds»)؛ وظهور سبب فشل Gemini؛ والنسخة المتحركة لا تمس الأصل؛ ومتصفح مع حجب pyarrow وpandas: الصفحات التسع بلا أخطاء، والزر فعّال مع قائمة الشروط، والصور مضمّنة؛ وفحص Python 3.11.</p>
-<p><strong>لم يُختبر بعد على جهاز المستخدم:</strong> إرسال حقيقي إلى WaveSpeed (أسماء حقلي <code>resolution</code> و<code>generate_audio</code> من صفحة النموذج؛ إن رفضهما المزود ظهرت رسالته).</p></main><script>document.querySelectorAll('pre').forEach(function(p){var b=document.createElement('button');b.className='copy-btn';b.textContent='📋 نسخ';b.onclick=function(){var t=p.querySelector('code')?p.querySelector('code').innerText:p.innerText;navigator.clipboard.writeText(t).then(function(){b.textContent='✅ نُسخ';setTimeout(function(){b.textContent='📋 نسخ'},1500)})};p.appendChild(b)});</script></body></html>
+<p><strong>لم يُختبر بعد على جهاز المستخدم:</strong> إرسال حقيقي إلى WaveSpeed (أسماء حقلي <code>resolution</code> و<code>generate_audio</code> من صفحة النموذج؛ إن رفضهما المزود ظهرت رسالته).</p>
+</main><script>document.querySelectorAll('pre').forEach(function(p){var b=document.createElement('button');b.className='copy-btn';b.textContent='📋 نسخ';b.onclick=function(){var t=p.querySelector('code')?p.querySelector('code').innerText:p.innerText;navigator.clipboard.writeText(t).then(function(){b.textContent='✅ نُسخ';setTimeout(function(){b.textContent='📋 نسخ'},1500)})};p.appendChild(b)});</script></body></html>
